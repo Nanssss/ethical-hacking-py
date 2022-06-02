@@ -1,0 +1,5 @@
+choisir la page à cloner, aller dessus sur internet, faire clic droit "save as" puis l'enregistrer
+on obtient un dossier et un fichier, ils sont a mettre dans /var/www/html
+ensuite il faut renommer le fichier en index.html
+activer apache2 avec sudo systemctl apache2 start
+en se connectant à l'ip de notre pc, on arrive sur cette fausse page
