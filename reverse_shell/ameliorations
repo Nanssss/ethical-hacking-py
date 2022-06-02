@@ -1,0 +1,6 @@
+ajouter capture micro
+voir video 68 --> effacer keylogger file apres qu'on ait quitté
+faire le telechargement et l'upload dans des threads
+crypter les données du keylogger pour pas qu'il s'en doute
+je dois pouvoir mettre certains encodages en autre que cp850 pour pas avoir de soucis, genre pour le keylogger par ex
+mettre les screenshots et les logs dans un dossier
