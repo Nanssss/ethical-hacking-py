@@ -1,16 +1,18 @@
-#!usr/bin/python
+#!usr/bin/python3
 
 import crypt
+from termcolor import cprint
 
 def CrackPass(cryptWord):
-	salt = cryptWord[0:2] #les 2 premieres lettres
+	salt = cryptWord[0:2] # le salt est ici 2 premieres lettres
 	dictionnary = open('dictionnary.txt','r')
 	for word in dictionnary.readlines():
 		word = word.strip('\n')
 		cryptPass = crypt.crypt(word, salt)
+		# compare la valeur du mdp hashé avec celle du dictionnaire hashé avec le salt, si on a le même résultat alors on a trouvé le mdp
 		if cryptWord == cryptPass:
-			print "[+] Found password: " + word
-			return
+			cprint("[+] Found password: " + word + '\n', 'green')
+			exit(0)
 
 def main():
 	passFile = open('passcrypt.txt','r')
@@ -18,7 +20,9 @@ def main():
 		if ":" in line: #si : est dans la ligne
 			user = line.split(':')[0]
 			cryptWord = line.split(':')[1].strip(' ').strip('\n')
-			print "[*] Cracking password for : " + user
+			print("[*] Cracking password for : " + user)
+			# prend en entrée le mot de passe hashé qu'on va bruteforcer
 			CrackPass(cryptWord)
+			cprint('[-] Not found', 'red')
 
 main()
