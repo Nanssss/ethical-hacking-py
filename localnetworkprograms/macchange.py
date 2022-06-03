@@ -5,6 +5,7 @@ from termcolor import colored
 
 def change_mac_address(interface,mac):
 	try:
+		# on désactive l'interface, on change l'@ mac et on réactive l'interface
 		subprocess.call(["sudo ip link set " + interface + " down"], shell=True) #execute juste la fonction
 		subprocess.call(["sudo macchanger --mac=" + new_mac_address + " " + interface], shell=True,stdout=subprocess.DEVNULL) #on affiche pas la sortie standard
 		subprocess.call(["sudo ip link set " + interface + " up"], shell=True) #execute juste la fonction
@@ -19,10 +20,10 @@ def main():
 
 	try:
 		before_change = subprocess.check_output(["ip addr show " + interface + " | sed -n 2p"], shell=True) #execute la fonction et store l'output dans la variable
-		print("before: " + str(before_change))
+		# print("before: " + str(before_change))
 		change_mac_address(interface,new_mac_address)
 		after_change = subprocess.check_output('ip addr show ' + interface + " | sed -n 2p", shell=True)
-		print("after: " + str(after_change))
+		# print("after: " + str(after_change))
 		if before_change == after_change:
 			print(colored("[!!] Failed to change mac address to: " + new_mac_address, 'red'))
 		else:
