@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3.8
 
 import socket
 from termcolor import colored #librairie pour les couleurs
