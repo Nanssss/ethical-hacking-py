@@ -10,7 +10,9 @@ def eth_addr(a):
 	return b
 
 try:
-	s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003)) #AF_PACKET sert a manipuler les packets a un niveau protocole, ntohs permet de convertir positive integers en bytes, RAW packets
+	s = socket.socket(socket.AF_PACKET, socket.SOCK_RAW, socket.ntohs(0x0003))
+	#AF_PACKET sert a manipuler les packets a un niveau protocole, ntohs converts a 16 bit integer from network format to host format., RAW packets
+	# socket.ntohs(0x0003) captures all the send & receive traffic from the network interface.
 except:
 	print(colored("[!!] Error on creating socket object",'red'))
 	exit(0)
@@ -22,6 +24,6 @@ while True:
 	eth_length = 14 #nb de bytes du header ethernet
 	eth_header = packet[:eth_length] #on garde juste la partie eth et pas le reste
 
-	eth = unpack('!6s6sH', eth_header) #va nous aider a separer nos trucs, voir tableau de bibliotheque struc pour les caracteres, 6 pour une mac, 6 pour l'autre, 2 pour le protocole
+	eth = unpack('!6s6sH', eth_header) #va nous aider a separer nos trucs, voir tableau de bibliotheque struct pour les caracteres, 6 pour une mac, 6 pour l'autre, 2 pour le protocole
 	eth_protocol = socket.ntohs(eth[2]) #le 3 element, donc le protocole, voir avec scapy :ls(Ether)
 	print("[+] Destination MAC : " + colored(eth_addr(packet[0:6]),'cyan') + " [+] Source MAC : " + colored(eth_addr(packet[6:12]),'yellow') + "[+] Protocol : " + colored(str(eth_protocol),'magenta'))

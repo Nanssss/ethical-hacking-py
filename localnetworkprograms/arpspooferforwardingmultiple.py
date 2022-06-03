@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 #pour forward les packets, il suffit de modifier la valeur dans le fichier /proc/sys/net/ipv4/ip_forward -> 0:off ; 1:on, voir le programme ifforwarding a executer en sudo su
 
@@ -31,9 +31,9 @@ def main():
 		print("Running...")
 		while True:
 			try:
-				spoof_arp(router_IP,tgt_IP) #un pour le routeur 
+				spoof_arp(router_IP,tgt_IP) #un pour le routeur
 				spoof_arp(tgt_IP,router_IP) #un autre pour le pc cible
-				spoof_arp(router_IP,tgt2_IP) #un pour le routeur 
+				spoof_arp(router_IP,tgt2_IP) #un pour le routeur
 				spoof_arp(tgt2_IP,router_IP) #un autre pour le pc cible
 			except IndexError:
 		                print("Index error je continue")
@@ -68,6 +68,4 @@ def main():
 		print("Parametre restaures a l'origine")
 		exit(0)
 
-
 main()
-
