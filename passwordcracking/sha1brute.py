@@ -1,10 +1,10 @@
-#!usr/bin/python
+#!usr/bin/python3
 
 from urllib.request import urlopen #la seule fonciton dont on a besoin dans cette librairie
 import hashlib
 from termcolor import colored
 
-sha1hash = input("[*] Enter Sha1 hash value: ")
+sha1hash = input("[*] Enter sha1 hash value: ")
 
 passlist = str(urlopen('https://raw.githubusercontent.com/danielmiessler/SecLists/master/Passwords/Common-Credentials/10-million-password-list-top-1000000.txt').read(), 'utf-8')
 #on met le lien dans la fonction url open, le lien doit contenir seulement les mdp donc sur guithub on clique sur raw
