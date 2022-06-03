@@ -6,7 +6,6 @@ import scapy.all as scapy
 
 unicode = str
 
-#==============================================PARTIE ARP SPOOFER===============================================
 def restore(destination_IP, source_IP):
 	target_mac = get_target_mac(destination_IP)
 	source_mac = get_target_mac(source_IP)

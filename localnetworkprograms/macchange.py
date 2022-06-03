@@ -12,7 +12,6 @@ def change_mac_address(interface,mac):
 	except:
 		subprocess.call(["sudo ip link set " + interface + " up"], shell=True) #execute juste la fonction
 
-
 def main():
 	interface = str(input("[*] Enter interface to change mac address on: "))
 	global new_mac_address
