@@ -3,12 +3,6 @@
 #pour forward les packets, il suffit de modifier la valeur dans le fichier /proc/sys/net/ipv4/ip_forward -> 0:off ; 1:on, voir le programme ifforwarding a executer en sudo su
 
 import scapy.all as scapy
-import os
-import argparse
-import sys
-import time
-import admin
-import ctypes
 
 unicode = str
 
