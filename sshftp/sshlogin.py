@@ -20,7 +20,7 @@ def connect(user, host, password):
 		cprint('[-] Error Connecting', 'red') #si ca renvoie un 0 c'est qu'on a pas pu se connecter
 		return
 	if ret == 1:
-		child2.sendline('yes') #si ca renvoie un 1 c'est qu'on s'est connnecte, ensuite on veut repondre yes a la question
+		child.sendline('yes') #si ca renvoie un 1 c'est qu'on s'est connnecte, ensuite on veut repondre yes a la question
 		ret = child.expect([pexpect.TIMEOUT, '[P|p]assword '])
 		if ret == 0:
 			cprint('[-] Error connecting', 'red')
