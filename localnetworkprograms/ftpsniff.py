@@ -2,6 +2,7 @@
 
 import optparse
 from scapy.all import *
+from termcolor import cprint
 
 def ftpSniff(pkt):
 	dest = pkt.getlayer(IP).dst #scapy, pour voir la destination du paquet IP
@@ -9,10 +10,10 @@ def ftpSniff(pkt):
 	user = re.findall('(?i)USER (.*)',raw) #1er arg = pattern qui va nous permettre de trouver juste l'username, on cherche l'username dans le paquet raw
 	pswd = re.findall('(?i)PASS (.*)',raw) #idem pour le mdp
 	if user:
-		print('[*] Detected FTP login to: ' + str(dest))
-		print('[+] User account: ' + str(user[0])) #liste de 1 element
+		cprint('[*] Detected FTP login to: ' + str(dest), 'yellow')
+		cprint('[+] User account: ' + user[0], 'green') #liste de 1 element
 	elif pswd:
-		print('[+] Password: ' + str(pswd[0]))
+		cprint('[+] Password: ' + pswd[0], 'green')
 
 def main():
 	parser = optparse.OptionParser('Usage of the program: ' +\

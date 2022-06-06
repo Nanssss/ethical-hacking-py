@@ -41,6 +41,8 @@ def main():
 			except TypeError:
 				print("Type error je continue")
 				pass
+			except KeyboardInterrupt:
+				break
 
 	finally:
 		restore(router_IP,tgt_IP)

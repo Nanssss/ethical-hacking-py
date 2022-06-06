@@ -27,15 +27,15 @@ En réalité, pour saturer un serveur, il faudrait le faire avec de nombreuses m
 ## macsniffer.py
 
 Ce programme nous sert à sniffer les paquets passant sur le réseau, et afficher les mac des machines communiquant.
-** **Il faut l'utiliser ne parallèle de l'arpspoofer.** **
+**Il faut l'utiliser ne parallèle de l'arpspoofer.**
 
 ## ftpsniff.py
 
 Ce programme sert à sniffer la connexion à un serveur ftp. Lorsqu'il détecte une connexion, il afficher l'user et le mdp.
-** **Il faut l'utiliser ne parallèle de l'arpspoofer.** **
+**Il faut l'utiliser ne parallèle de l'arpspoofer.**
 
 ## httpsniffer.py
 
 Ce programme sert à sniffer les paquets HTTP, puisque ceux-ci ne sont pas cryptés. Il enregistre les paquets trouvés dans un log, et affiche les user et password trouvés
 s'ils sont dans le pattern écrit dans le programme.
-** **Il faut l'utiliser ne parallèle de l'arpspoofer.** **
+**Il faut l'utiliser ne parallèle de l'arpspoofer.**
