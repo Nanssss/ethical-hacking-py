@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3.8
 
 import socket
-
+from termcolor import cprint
 
 def retBanner(ip,port):
 	try:
@@ -12,12 +12,12 @@ def retBanner(ip,port):
 		return banner
 	except:
 		return #on fait rien on quitte juste la fonction si ca marche pas
+
 def main():
-	ip = raw_input("[*] Enter target IP: ")
+	ip = input("[*] Enter target IP: ")
 	for port in range(1,100):
 		banner = retBanner(ip,port) #variable qui stocke les resultats des ports nous renvoyant une banner
 		if banner: #si la banner existe
-			print "[+]" + ip + "/" + str(port) + ": " + banner.strip('/n')
-
+			cprint("[+]" + ip + "/" + str(port) + ": " + banner.decode(), 'green') #il faut .decode car banner est un byte
 
 main()
