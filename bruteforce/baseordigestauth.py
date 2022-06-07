@@ -51,7 +51,7 @@ class request_performer(Thread):
 					print("status code")
 					print(r.status_code)
 				elif self.method == "digest":
-					r = requests;get(self.url, auth=HTTpDigestAuth(self.username, self.password))
+					r = requests.get(self.url, auth=HTTpDigestAuth(self.username, self.password))
 				if r.status_code == 200: #c'est qu'on a trouve le mdp
 					hit = "0"
 					print("[+] password found - " + self.password)
