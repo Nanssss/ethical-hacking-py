@@ -7,5 +7,5 @@
 import requests
 
 myheaders = {'User-Agent' : 'Iphone 6', 'Host' : 'google.com'}
-r = requests.get('http://arh.bg.ac.rs', headers=myheaders)
+r = requests.get('http://httpbin.org/headers', headers=myheaders)
 print(r.text)

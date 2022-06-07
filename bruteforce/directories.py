@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import requests
+from termcolor import cprint
 
 
 def request(url):
@@ -18,4 +19,4 @@ for line in file:
 	full_url = target_url + "/" + word
 	response = request(full_url)
 	if response: #si request ne retourne rien, donc si ca a pas marche
-		print("[+] Discovered directory at this link : " + full_url)
+		cprint("[+] Discovered directory at this link : " + full_url, 'green')

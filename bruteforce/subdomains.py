@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 import requests
+from termcolor import cprint
 
 
 def request(url):
@@ -16,6 +17,12 @@ file = open("common.txt", "r")
 for line in file:
 	word = line.strip()
 	full_url = "http://" + word + "." + target_url #pour plus tard rajouter https
-	response = request(full_url)
-	if response: #si request ne retourne rien, donc si ca a pas marche
-		print("[+] Discovered subdomain at this link : " + full_url)
+	# print(full_url)
+	try:
+		response = request(full_url)
+		if response: #si request ne retourne rien ça a pas marché
+			cprint("[+] Discovered subdomain at this link : " + full_url, 'green')
+	except KeyboardInterrupt:
+		break
+	except:
+		pass
