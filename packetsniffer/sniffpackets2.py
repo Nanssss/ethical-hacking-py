@@ -121,8 +121,8 @@ def analyze_ether_header(data_recv):
 	data = data_recv[14:] #data = le reste
 
 	print(colored("_____________________ETHERNET HEADER____________________",'magenta','on_yellow'))
-	print("Destination MAC: %s:%s:%s:%s:%s:%s " % (dest_mac[0:2],dest_mac[2:4],dest_mac[4:6],dest_mac[6:8],dest_mac[8:10],dest_mac[10:12]))
-	print("Source MAC: {}:{}:{}:{}:{}:{} ".format(src_mac[0:2],src_mac[2:4],src_mac[4:6],src_mac[6:8],src_mac[8:10],src_mac[10:12]))
+	print("Destination MAC: %s:%s:%s:%s:%s:%s " % (dest_mac[0:2].decode(),dest_mac[2:4].decode(),dest_mac[4:6].decode(),dest_mac[6:8].decode(),dest_mac[8:10].decode(),dest_mac[10:12].decode()))
+	print("Source MAC: {}:{}:{}:{}:{}:{} ".format(src_mac[0:2].decode(),src_mac[2:4].decode(),src_mac[4:6].decode(),src_mac[6:8].decode(),src_mac[8:10].decode(),src_mac[10:12].decode()))
 	print("PROTOCOL: %hu" % proto)
 
 	if proto == 0x08: #si c'est un protocole ipv4, donc ip header
@@ -141,7 +141,7 @@ def main():
 		sock_created = True
 
 	data_recv = sniffer_socket.recv(2048) #nbre de bits qu'on veut recevoir
-	os.system('clear')
+	# os.system('clear')
 
 	data_recv, ip_bool = analyze_ether_header(data_recv) #on analyse l'header ethernet du packet recu
 	if ip_bool: #si c'est vrai c'est qu'il y a un iP header et on va l'analyser
