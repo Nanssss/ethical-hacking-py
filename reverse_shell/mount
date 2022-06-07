@@ -1,1 +1,0 @@
-sudo mount -o user=Nans,rw //192.168.1.29/Partage ~/Desktop/Partage
