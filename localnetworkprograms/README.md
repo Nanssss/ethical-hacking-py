@@ -8,6 +8,7 @@ Ce programme sert à changer virtuellement notre addresse mac. Celà permet de s
 
 **Utilisation :**
 `sudo python3 arpspooferforwarding.py`
+
 Il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'imagine que ce sera **wlan0** ou **eth0**, puis entrez l'@ mac que vous voulez avoir.
 
 ## arpspooferforwarding.py
@@ -21,7 +22,9 @@ Il faut activer l'ipforwarding si on veut que la victime ait internet, pour ce f
 
 **Utilisation :**
 
-`sudo python3 arpspooferforwarding.py` il va vous demander l'IP du routeur et l'IP de la victime. Une fois celà fait, l'attaque sera en cours.
+`sudo python3 arpspooferforwarding.py` 
+
+Il va vous demander l'IP du routeur et l'IP de la victime. Une fois celà fait, l'attaque sera en cours.
 
 ## synflood.py
 
@@ -30,7 +33,9 @@ En réalité, pour saturer un serveur, il faudrait le faire avec de nombreuses m
 
 **Utilisation :**
 
-`sudo python3 synflood.py` il va ensuite vous demander la fake IP à utiliser pour envoyer les paquets, le port source à utiliser, l'IP de la cible, et le contenu du paquet TCP (vous pouvez mettre n'importe quoi).
+`sudo python3 synflood.py` 
+
+Il va ensuite vous demander la fake IP à utiliser pour envoyer les paquets, le port source à utiliser, l'IP de la cible, et le contenu du paquet TCP (vous pouvez mettre n'importe quoi).
 
 ## macsniffer.py
 
@@ -40,7 +45,9 @@ Ce programme nous sert à sniffer les paquets passant sur le réseau, et affiche
 
 **Utilisation :**
 
-`sudo python3 macsniffer.py`, simplement exécuter le programme.
+`sudo python3 macsniffer.py`
+
+Simplement exécuter le programme.
 
 ## ftpsniff.py
 
@@ -50,7 +57,9 @@ Ce programme sert à sniffer la connexion à un serveur ftp. Lorsqu'il détecte 
 
 **Utilisation :**
 
-`sudo python3 ftpsniff.py -i [interface]`, une fois des identifiants ftp trouvés il les affichera. Pour le test, j'ai utilisé la machine virtuelle metasploitable qui fait tourner un serveur ftp non sécurisé.
+`sudo python3 ftpsniff.py -i [interface]`
+
+Une fois des identifiants ftp trouvés il les affichera. Pour le test, j'ai utilisé la machine virtuelle metasploitable qui fait tourner un serveur ftp non sécurisé.
 
 ## httpsniffer.py
 
@@ -61,4 +70,6 @@ On remarque alors le manque de sécurité du protocole HTTP, il faut bien vérif
 
 **Utilisation :**
 
-`sudo python3 httpsniffer.py` il va ensuite vous demander l'interface sur laquelle sniffer les paquets HTTP.
+`sudo python3 httpsniffer.py` 
+
+Il va ensuite vous demander l'interface sur laquelle sniffer les paquets HTTP.
