@@ -9,13 +9,13 @@ La rapidité de l'attaque va donc être dépendante de la puissance de calcul de
 
 <p align="center">
   <img align="left" src="../ressources/brute_nb_char.png" width="380" title="Rapidité des attaques par bruteforce selon la longueur du mot de passe (source : actualiteinformatique.fr)" alt="nb_char_bruteforce">
-  <img align="right" src="../ressources/tab_bruteforce.png" width="470" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
+  <img align="right" src="../ressources/tab_bruteforce.png" width="500" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
   <br/>
-  <t align="right" style="font-style: italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
+  <em align="right" style="font-style: italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</em>
   <br/>
-  <t align="right" style="font-style: italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
+  <em align="right" style="font-style: italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</em>
 </p>
-<br/><br/>
+<br/>
 
 - On peut aussi utiliser des dictionnaires de mots de passe
 
