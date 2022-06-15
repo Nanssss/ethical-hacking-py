@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-#MARCHE SEULEMENT SI APPLICATION NON SECURISEES ACTIVE, DONC JAMAIS ENFT
 
 from termcolor import colored
 import smtplib

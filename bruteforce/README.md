@@ -5,10 +5,13 @@ Plusieurs approches peuvent être utilisées :
 
 - L'algorithme va tester toutes les combinaisons possibles
 
-La rapidité de l'attaque va donc être dépendante de la puissance de calcul de la machine de l'attaquant, mais surtout de la complexité du mot de passe. C'est pour celà que la majorité des sites web demandent un mot de passe d'au moins 8 caractères, comprenant des majuscules, minuscules, chiffres et caractères spéciaux. Celà augmente grandement le nombre de combinaisons possibles. On peut voir sur le tableau ci-dessous les effets de la longueur et de la complexité d'un mot de passe :
+La rapidité de l'attaque va donc être dépendante de la puissance de calcul de la machine de l'attaquant, mais surtout de la complexité du mot de passe. C'est pour celà que la majorité des sites web demandent un mot de passe d'au moins 8 caractères, comprenant des majuscules, minuscules, chiffres et caractères spéciaux. Celà augmente grandement le nombre de combinaisons possibles. On peut voir sur les tableaux ci-dessous les effets de la longueur et de la complexité d'un mot de passe :
 
 <p align="center">
-  <img align="center" src="../ressources/tab_bruteforce.png" width="700" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe" alt="tab_bruteforce">
+  <img align="left" src="../ressources/tab_bruteforce.png" width="500" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
+  </br>
+  <t align="center" style="italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
+  <img align="left" src="../ressources/brute_nb_char.png" width="500" title="Rapidité des attaques par bruteforce selon la longueur du mot de passe (source : actualiteinformatique.fr)" alt="nb_char_bruteforce">
   </br>
   <t align="center" style="italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
 </p>
@@ -28,22 +31,43 @@ Une attaque par bruteforce est donc facile à mettre en place, mais il est aussi
 
 Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un certain nombre de tests, le serveur nous bloque.
 
+*Je me souviens que ce programme marchait à l'époque où j'ai suivi le cours, mais maintenant, après avoir testé avec ma propre addresse mail, il ne fonctionne pas et je n'arrive pas à voir pourquoi...*
+
+**Utilisation :**
+Simplement exécuter le programme, il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple passwords.txt).
+*/!\ Si le programme est exécuté depuis vscode, le répertoire courant est security-course (et non bruteforce). Si on veut utiliser passwords.txt, il faudra alors spécifier le chemin "bruteforce/passwords.txt".*
+
 ## websitebruteforcer.py
 
 Programme servant à bruteforce n'importe quelle page de login. Il faut juste adapter les champs en haut du programme pour matcher avec le site voulu. Après, en réalité, les sites nous bloquent après un certain nombre de tentatives.
+
+**Utilisation :**
+Exécuter le programme, il va demander l'utilisateur à bruteforcer, et le path vers le fichier contenant les mots de passe à chercher.
+Vous pouvez essayer avec passwords.txt.
+*Pour tester ce programme, j'utilisais une machine virtuelle faisant tourner metasploitable, et notamment DVWA(Damn Vulnerable Web Application). Vous pouvez le trouver ici si vous souhaitez le tester : https://dvwa.co.uk/*S
 
 ## directories.py
 
 Bruteforce un site web pour trouver les directories du site auxquels on peut accéder.
 
+**Utilisation :**
+Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+Vous pouvez essayer avec https://google.com et le fichier bruteforce/common.txt, il va trouver beaucoup de directories.
+
 ## subdomains.PY
 
 Idem que le programme précedent mais va chercher les subdomains.
 
+**Utilisation :**
+Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+Vous pouvez essayer avec https://google.com et le fichier bruteforce/common.txt, il va trouver beaucoup de subdomains.
+
 ## falseheader.py
 
-Ce programme sert à modifier nos headers, on peut alors se faire passer pour une autre machine auprès d'un site web.
+Ce programme sert à montrer comment modifier nos headers. Il crée simplement un faux header et se connecte au site 'http://httpbin.org/headers qui nous montre nos headers actuels.
 
-## baseordigestauth.py
+On peut alors se faire passer pour une autre machine auprès d'un site web.
 
-Sert à bruteforce des sites utilisant les méthodes basic ou digest.
+**Utilisation :**
+Juste exécuter le programme.
+

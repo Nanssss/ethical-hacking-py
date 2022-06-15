@@ -3,7 +3,6 @@
 .cache
 .config
 .cvs
-pass
 .cvsignore
 .forward
 .git/HEAD

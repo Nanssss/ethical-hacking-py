@@ -12,12 +12,14 @@ def request(url):
 
 
 target_url = input("[*] Enter target URL: ")
+passwdfile =input("[*] Enter the path to the file containing subdomains to be tested: ")
+file = open(passwdfile, "r")
+url = target_url.split("://")
 
-file = open("common.txt", "r")
+file = open(passwdfile, "r")
 for line in file:
 	word = line.strip()
-	full_url = "http://" + word + "." + target_url #pour plus tard rajouter https
-	# print(full_url)
+	full_url = url[0] + "://" + word + "." + url[1]
 	try:
 		response = request(full_url)
 		if response: #si request ne retourne rien ça a pas marché
