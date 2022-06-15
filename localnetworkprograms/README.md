@@ -7,7 +7,8 @@
 Ce programme sert à changer virtuellement notre addresse mac. Celà permet de se faire passer pour une autre machine. Par exemple, certains systèmes bannissent des machines en utilisant leur addresse mac, ce programme peut permettre de bypasser ce bannissement.
 
 **Utilisation :**
-`sudo python3 arpspooferforwarding.py`, il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'imagine que ce sera **wlan0** ou **eth0**, puis entrez l'@ mac que vous voulez avoir.
+`sudo python3 arpspooferforwarding.py`
+Il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'imagine que ce sera **wlan0** ou **eth0**, puis entrez l'@ mac que vous voulez avoir.
 
 ## arpspooferforwarding.py
 
