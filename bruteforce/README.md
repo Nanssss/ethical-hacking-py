@@ -11,7 +11,7 @@ La rapidité de l'attaque va donc être dépendante de la puissance de calcul de
   <img align="left" src="../ressources/brute_nb_char.png" width="380" title="Rapidité des attaques par bruteforce selon la longueur du mot de passe (source : actualiteinformatique.fr)" alt="nb_char_bruteforce">
   <img align="right" src="../ressources/tab_bruteforce.png" width="500" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
   <br/>
-  <em align="right" style="font-size: 10">Rapidité des attaques par bruteforce selon la longueur/complexité du mot de passe (sources : actualiteinformatique.fr & ionos.fr)</em>
+  <em align="center" style="font-size: 10">Rapidité des attaques par bruteforce selon la longueur/complexité du mot de passe (sources : actualiteinformatique.fr & ionos.fr)</em>
   <br/>
   <br/>
 </p>
@@ -37,6 +37,7 @@ Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un cer
 
 **Utilisation :**
 Simplement exécuter le programme, il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple passwords.txt).
+
 */!\ Si le programme est exécuté depuis vscode, le répertoire courant est security-course (et non bruteforce). Si on veut utiliser passwords.txt, il faudra alors spécifier le chemin "bruteforce/passwords.txt".*
 
 ## websitebruteforcer.py
@@ -45,7 +46,9 @@ Programme servant à bruteforce n'importe quelle page de login. Il faut juste ad
 
 **Utilisation :**
 Exécuter le programme, il va demander l'utilisateur à bruteforcer, et le path vers le fichier contenant les mots de passe à chercher.
+
 Vous pouvez essayer avec **bruteforce/passwords.txt**.
+
 *Pour tester ce programme, j'utilisais une machine virtuelle faisant tourner metasploitable, et notamment DVWA(Damn Vulnerable Web Application). Vous pouvez le trouver ici si vous souhaitez le tester : https://dvwa.co.uk/*
 
 ## directories.py
@@ -54,6 +57,7 @@ Bruteforce un site web pour trouver les directories du site auxquels on peut acc
 
 **Utilisation :**
 Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+
 Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de directories.
 
 ## subdomains.PY
@@ -62,6 +66,7 @@ Idem que le programme précedent mais va chercher les subdomains.
 
 **Utilisation :**
 Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+
 Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de subdomains.
 
 ## falseheader.py
