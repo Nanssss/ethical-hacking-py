@@ -1,3 +1,0 @@
-ameliorer affichage
-si on quitte thread, il faut que le reverse shell continue a tourner normalement, pas qui fasse recv,recv,recv...
-

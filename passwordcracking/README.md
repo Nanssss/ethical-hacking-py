@@ -1,9 +1,17 @@
 # Password Cracking
 
+Divers programmes de cracking de mots de passe cryptés.
+
 ## hasher.py
 
 Demo de hashage :
-Prend une chaine de caractère en entrée, et la hash en md5, sha 1, 226, 256, 512, puis affiche le string résultant
+Prend une chaine de caractère en entrée, et la hash en md5, sha 1, 222, 256, 512, puis affiche le string résultant.
+
+Ces protocoles sont des algorithmes de hashage. Ils sont très utilisés dans d'innombrables applications de nos jours.
+
+- Ils sont utilisés pour générer des clés (ou empreintes) **uniques** protégeant des données. Il peuvent par exemple permettre de crypter un mot de passe ou de controler l'intégrité d'un fichier.
+- Chaque protocole a une taille d'empreinte différente : 128 bits pour md5, 160 bits pour sha1, 224 bits pour sha224, 256 bits pour sha256, 512 bits pour sha512. Evidemment, plus l'empreinte est longue, plus l'algorithme est complexe.
+- L'opération est irréversible, il est donc impossible de retrouver le mot de passe à partir du hash
 
 ## sha1brute.py
 

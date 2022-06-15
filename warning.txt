@@ -1,2 +1,0 @@
-tous les programmes marchent et ont été vérifiés sauf ceux dans sshftp
-et aussi la redirection vers une page hébergée grâce au dnsspoofer, ça marche sur notre machine mais pas sur une autre
