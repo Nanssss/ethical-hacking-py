@@ -17,7 +17,7 @@ Ce programme est un arpspoofer. Il sert à se faire passer pour le routeur aupr�
 
 Il faut activer l'ipforwarding si on veut que la victime ait internet, pour ce faire, il y a le programme ipforward.sh.
 
-``sudo ./ipforward.sh 1` pour activer l'ip forwarding et `sudo ./ipforward.sh 0` pour le désactiver.
+`sudo ./ipforward.sh 1` pour activer l'ip forwarding et `sudo ./ipforward.sh 0` pour le désactiver.
 
 
 **Utilisation :**
