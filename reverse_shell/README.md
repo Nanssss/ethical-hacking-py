@@ -10,7 +10,7 @@ Le Trojan est un type de logiciel malveillant particulièrement dangereux. Il co
 C'est le programme à exécuter par l'attaquant. C'est un serveur qui attend un connexion par une machine victime.
 Une fois la connexion établie, il peut exécuter tout un tas de commandes, qu'on peut lister en utilisant la commande "help" :
 
-            `download <path> --> Download a file from target PC
+           `download <path> --> Download a file from target PC
             upload <path>   --> Upload a file to target PC
             get <url>       --> Download a file to target PC from a url
             start path      --> Start a program on target pc
@@ -18,11 +18,11 @@ Une fois la connexion établie, il peut exécuter tout un tas de commandes, qu'o
             check           --> Check for the admin privileges
             keylog_start    --> Start the keylogger on target PC
             keylog_dump     --> Dump the keylogger collected data
-            q               --> exit the reverse shell '''`
+            q               --> exit the reverse shell`
 
 **Utilisation :**
 
-Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant (donc de votre machine), pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme :
+**Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant** (donc de votre machine), pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme :
 
 `sudo python3 server.py`
 
@@ -36,7 +36,7 @@ Ce programme n'est en soit que le parasite expliqué plus haut, il ne prend pas 
 
 **Utilisation :**
 
-Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant, pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme (vous pouvez exécuter les 2 programmes sur la même machine) :
+**Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant**, pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme (vous pouvez exécuter les 2 programmes sur la même machine) :
 
 `sudo python3 target.py`
 
