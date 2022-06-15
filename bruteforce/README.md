@@ -8,13 +8,16 @@ Plusieurs approches peuvent être utilisées :
 La rapidité de l'attaque va donc être dépendante de la puissance de calcul de la machine de l'attaquant, mais surtout de la complexité du mot de passe. C'est pour celà que la majorité des sites web demandent un mot de passe d'au moins 8 caractères, comprenant des majuscules, minuscules, chiffres et caractères spéciaux. Celà augmente grandement le nombre de combinaisons possibles. On peut voir sur les tableaux ci-dessous les effets de la longueur et de la complexité d'un mot de passe :
 
 <p align="center">
-  <img align="left" src="../ressources/tab_bruteforce.png" width="470" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
   <img align="right" src="../ressources/brute_nb_char.png" width="380" title="Rapidité des attaques par bruteforce selon la longueur du mot de passe (source : actualiteinformatique.fr)" alt="nb_char_bruteforce">
-  </br>
+  <img align="left" src="../ressources/tab_bruteforce.png" width="470" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe (source : ionos.fr)" alt="tab_bruteforce">
+  <br/>
   <t align="center" style="italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
   <t align="center" style="italic">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
-  </br>
+  <br/>
 </p>
+*Rapidité des attaques par bruteforce selon la complexité/longueur du mot de passe (sources : acutaliteinformatique.fr & ionos.fr)*
+
+<br/>
 
 - On peut aussi utiliser des dictionnaires de mots de passe
 
