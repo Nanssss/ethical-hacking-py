@@ -36,7 +36,8 @@ Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un cer
 *Je me souviens que ce programme marchait à l'époque où j'ai suivi le cours, mais maintenant, après avoir testé avec ma propre addresse mail, il ne fonctionne pas et je n'arrive pas à voir pourquoi...*
 
 **Utilisation :**
-Simplement exécuter le programme, il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple passwords.txt).
+
+Exécuter le programme : `python3 gmailbrute.py`, il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple passwords.txt).
 
 */!\ Si le programme est exécuté depuis vscode, le répertoire courant est security-course (et non bruteforce). Si on veut utiliser passwords.txt, il faudra alors spécifier le chemin "bruteforce/passwords.txt".*
 
@@ -45,7 +46,8 @@ Simplement exécuter le programme, il va demander de rentrer l'email à brutefor
 Programme servant à bruteforce n'importe quelle page de login. Il faut juste adapter les champs en haut du programme pour matcher avec le site voulu. Après, en réalité, les sites nous bloquent après un certain nombre de tentatives.
 
 **Utilisation :**
-Exécuter le programme, il va demander l'utilisateur à bruteforcer, et le path vers le fichier contenant les mots de passe à chercher.
+
+Exécuter le programme : `python3 websitebruteforcer.py`, il va demander l'utilisateur à bruteforcer, et le path vers le fichier contenant les mots de passe à chercher.
 
 Vous pouvez essayer avec **bruteforce/passwords.txt**.
 
@@ -53,19 +55,21 @@ Vous pouvez essayer avec **bruteforce/passwords.txt**.
 
 ## directories.py
 
-Bruteforce un site web pour trouver les directories du site auxquels on peut accéder.
+Bruteforce un site web pour trouver les directories du site auxquels on peut accéder. Ceux-ci peuvent contenir des données intéressantes.
 
 **Utilisation :**
-Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+
+Exécuter le programme : `python3 directories.py`, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
 
 Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de directories.
 
 ## subdomains.PY
 
-Idem que le programme précedent mais va chercher les subdomains.
+Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuvent contenir des données intéressantes.
 
 **Utilisation :**
-Exécuter le programme, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
+
+Exécuter le programme : `python3 subdomains.py`, il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
 
 Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de subdomains.
 
@@ -76,5 +80,6 @@ Ce programme sert à montrer comment modifier nos headers. Il crée simplement u
 On peut alors se faire passer pour une autre machine auprès d'un site web.
 
 **Utilisation :**
-Juste exécuter le programme.
+
+Exécuter le programme : `python3 falseheader.py`.
 
