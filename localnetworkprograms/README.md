@@ -1,5 +1,7 @@
 # Local Network Programs
 
+Une variété de programmes à utiliser sur un réseau local.
+
 ## macchange.py
 
 **Ne marche que sur linux avec macchanger installé car il utilise cette commande.**
@@ -39,7 +41,7 @@ Il va ensuite vous demander la fake IP à utiliser pour envoyer les paquets, le 
 
 ## macsniffer.py
 
-**A utiliser ne parallèle de l'arpspoofer, ou à tester localement**
+**A utiliser en parallèle de l'arpspoofer, ou à tester localement**
 
 Ce programme nous sert à sniffer les paquets passant sur le réseau, et afficher les mac des machines communiquantes.
 
@@ -51,7 +53,7 @@ Simplement exécuter le programme.
 
 ## ftpsniff.py
 
-**A utiliser ne parallèle de l'arpspoofer, ou à tester localement**
+**A utiliser en parallèle de l'arpspoofer, ou à tester localement**
 
 Ce programme sert à sniffer la connexion à un serveur ftp. Lorsqu'il détecte une connexion, il affiche l'user et le mdp. Cela permet donc ensuite d'accéder à toutes les données du serveur ftp en s'y connectant.
 
@@ -63,7 +65,7 @@ Une fois des identifiants ftp trouvés il les affichera. Pour le test, j'ai util
 
 ## httpsniffer.py
 
-**A utiliser ne parallèle de l'arpspoofer, ou à tester localement**
+**A utiliser en parallèle de l'arpspoofer, ou à tester localement**
 
 Ce programme sert à sniffer les paquets HTTP, puisque ceux-ci ne sont pas cryptés. Il enregistre les paquets trouvés dans un log, et affiche les user et password trouvés s'ils sont dans le pattern écrit dans le programme.
 On remarque alors le manque de sécurité du protocole HTTP, il faut bien vérifier qu'on est en HTTPS avant de saisir des identifiants ou de faire des opérations bancaires par exemple.
@@ -73,3 +75,11 @@ On remarque alors le manque de sécurité du protocole HTTP, il faut bien vérif
 `sudo python3 httpsniffer.py` 
 
 Il va ensuite vous demander l'interface sur laquelle sniffer les paquets HTTP.
+
+## sniffpackets.py
+
+Programme qui analyse tous les paquets passant par la machine, et affiche les infos des header Ethernet, IP, UDP, TCP.
+
+**Utilisation :**
+
+`sudo python3 sniffpackets.py`

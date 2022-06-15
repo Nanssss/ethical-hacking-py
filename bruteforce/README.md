@@ -74,6 +74,7 @@ Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/commo
 Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuvent contenir des données intéressantes.
 
 **Utilisation :**
+
 `python3 subdomains.py`
 
 Il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
@@ -82,7 +83,7 @@ Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/commo
 
 ## falseheader.py
 
-Ce programme sert à montrer comment modifier nos headers. Il crée simplement un faux header et se connecte au site 'http://httpbin.org/headers qui nous montre nos headers actuels.
+Ce programme sert à montrer comment modifier nos headers. Il crée simplement un faux header et se connecte au site http://httpbin.org/headers qui nous montre nos headers actuels.
 
 On peut alors se faire passer pour une autre machine auprès d'un site web.
 
