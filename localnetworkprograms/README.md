@@ -7,7 +7,7 @@
 Ce programme sert à changer virtuellement notre addresse mac. Celà permet de se faire passer pour une autre machine. Par exemple, certains systèmes bannissent des machines en utilisant leur addresse mac, ce programme peut permettre de bypasser ce bannissement.
 
 **Utilisation :**
-**sudo python3 arpspooferforwarding.py**, il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'imagine que ce sera **wlan0** ou **eth0**, puis entrez l'@ mac que vous voulez avoir.
+''sudo python3 arpspooferforwarding.py'', il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'imagine que ce sera **wlan0** ou **eth0**, puis entrez l'@ mac que vous voulez avoir.
 
 ## arpspooferforwarding.py
 
@@ -17,7 +17,6 @@ Il faut activer l'ipforwarding si on veut que la victime ait internet, pour ce f
 
 **sudo ./ipforward.sh 1** pour activer l'ip forwarding et **sudo ./ipforward.sh 0** pour le désactiver.
 
-<br/>
 
 **Utilisation :**
 **sudo python3 arpspooferforwarding.py**, il va vous demander l'IP du routeur et l'IP de la victime. Une fois celà fait, l'attaque sera en cours.
@@ -46,7 +45,7 @@ Ce programme nous sert à sniffer les paquets passant sur le réseau, et affiche
 Ce programme sert à sniffer la connexion à un serveur ftp. Lorsqu'il détecte une connexion, il affiche l'user et le mdp. Cela permet donc ensuite d'accéder à toutes les données du serveur ftp en s'y connectant.
 
 **Utilisation :**
-**sudo python3 ftpsniff.py** -i <interface>, une fois des identifiants ftp trouvés il les affichera. Pour le test, j'ai utilisé la machine virtuelle metasploitable qui fait tourner un serveur ftp non sécurisé.
+'sudo python3 ftpsniff.py -i [interface]', une fois des identifiants ftp trouvés il les affichera. Pour le test, j'ai utilisé la machine virtuelle metasploitable qui fait tourner un serveur ftp non sécurisé.
 
 ## httpsniffer.py
 
