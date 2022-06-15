@@ -1,4 +1,0 @@
-pour faire marcher scapy sur windows :
-- installer npcap
-- installer pywin32 -> pip install pywin32
-

