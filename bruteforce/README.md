@@ -6,10 +6,8 @@ Plusieurs approches peuvent être utilisées :
 - L'algorithme va tester toutes les combinaisons possibles
 La rapidité de l'attaque va donc être dépendante de la puissance de calcul de la machine de l'attaquant, mais surtout de la complexité du mot de passe. C'est pour celà que la majorité des sites web demandent un mot de passe d'au moins 8 caractères, comprenant des majuscules, minuscules, chiffres et caractères spéciaux. Celà augmente grandement le nombre de combinaisons possibles. On peut voir sur le tableau ci-dessous les effets de la longueur et de la complexité d'un mot de passe :
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Tableau rapidité attaques par bruteforce (source : ionos.fr)"
-
 <p align="center">
-  <img src="../ressources/tab_bruteforce.png" width="350" title="hover text">
+  <img src="../ressources/tab_bruteforce.png" width="700" title="hover text" alt="Tableau rapidité attaques par bruteforce">
 </p>
 
 ## gmailbrute.py
