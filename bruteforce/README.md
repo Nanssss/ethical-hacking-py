@@ -8,6 +8,10 @@ La rapidité de l'attaque va donc être dépendante de la puissance de calcul de
 
 ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Tableau rapidité attaques par bruteforce (source : ionos.fr)"
 
+<p align="center">
+  <img src="../ressources/tab_bruteforce" width="350" title="hover text">
+</p>
+
 ## gmailbrute.py
 
 Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un certain nombre de tests, le serveur nous bloque.
