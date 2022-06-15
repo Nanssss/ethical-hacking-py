@@ -7,7 +7,8 @@ Plusieurs approches peuvent être utilisées :
 La rapidité de l'attaque va donc être dépendante de la puissance de calcul de la machine de l'attaquant, mais surtout de la complexité du mot de passe. C'est pour celà que la majorité des sites web demandent un mot de passe d'au moins 8 caractères, comprenant des majuscules, minuscules, chiffres et caractères spéciaux. Celà augmente grandement le nombre de combinaisons possibles. On peut voir sur le tableau ci-dessous les effets de la longueur et de la complexité d'un mot de passe :
 
 <p align="center">
-  <img src="../ressources/tab_bruteforce.png" width="700" title="hover text" alt="Tableau rapidité attaques par bruteforce">
+  <img align="center" src="../ressources/tab_bruteforce.png" width="700" title="Rapidité des attaques par bruteforce selon la complexité du mot de passe" alt="tab_bruteforce">
+  <t align="center">Rapidité des attaques par bruteforce selon la complexité du mot de passe</t>
 </p>
 
 ## gmailbrute.py
