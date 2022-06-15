@@ -1,3 +1,5 @@
 pyexpect
 termcolor
 requests
+pillow
+pynput
