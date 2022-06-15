@@ -1,6 +1,7 @@
-admin:password
-admin:Password123
-admin:admin
-root:toor
-root:GHpzDyyNFUBeU
-admin:root
+admin:hash
+admin:hash
+admin:hash
+root:hash
+le suivant est le hash de superman avec le salt:hash
+root:suqSmVwRn.EoM
+admin:hash
