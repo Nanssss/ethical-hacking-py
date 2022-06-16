@@ -8,4 +8,4 @@ Programme à exécuter sur la target. Run les commandes cmd pour voir les résea
 
 **Avant de lancer le programme, il faut rentrer votre mail et mot de passe en haut du fichier pour qu'il puisse vous envoyer le mail contenant les mots de passe.
 
-    python3 wifisteal.py
+python3 wifisteal.py
