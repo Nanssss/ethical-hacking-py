@@ -15,7 +15,7 @@ Prend une chaine de caractère en entrée, et la hash en md5, sha 1, 222, 256, 5
 
 **Utilisation :**
 
-`python3 hasher.py`
+    python3 hasher.py
 
 Il va ensuite demander une chaine de caractères à hasher. Vous pouvez par exemple entrer "**superman**", qui vous donnera les hashs suivants :
 
@@ -33,7 +33,7 @@ Si on trouve une valeur de sha1 égale, alors on aura trouvé le mot de passe.
 
 **Utilisation :**
 
-`python3 md5brute.py`
+    python3 md5brute.py
 
 Il va ensuite vous demander le hash à cracker et le path du dictionnaire/fichier à utiliser. Vous pouvez voir que si vous utilisez le hash md5 de "superman" (en gras au-dessus) et le dictionnaire **dictionnary.txt**, il va bien trouver que "superman" était le mot de passe originel (vu qu'il est contenu dans le dictionnaire).
 
@@ -43,7 +43,7 @@ Même fonctionnement que le programme précedent, seulement, cette fois-ci, le d
 
 **Utilisation :**
 
-`python3 sha1brute.py`
+    python3 sha1brute.py
 
 Il va ensuite vous demander le hash à cracker. Si vous utilisez le hash sha1 de "superman" (en gras au-dessus), il va bien trouver que "superman" était le mot de passe originel (vu qu'il est contenu dans le dictionnaire).
 
@@ -58,6 +58,6 @@ Ici, le programme prend le mot de passe hashé qu'on recherche, puis le compare 
 
 **Utilisation :**
 
-`python3 cryptforce.py`
+    python3 cryptforce.py
 
 Il suffit d'exécuter le programme. Le programme va aller chercher des combinaisons user:mdp(hashé) à cracker dans le fichier passcrypt.txt, qu'il va comparer avec les hash des mdp contenus dans dictionnary.txt en ajoutant le salt (pour obtenir le hash de superman avec le salt, j'ai simplement exécuté `crypt.crypt("superman", "su")` dans python)

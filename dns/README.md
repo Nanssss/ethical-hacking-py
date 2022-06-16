@@ -8,7 +8,7 @@ Sniffe les paquets DNS et affiche des informations dessus.
 
 **Utilisation :**
 
-`sudo python3 dns.py`
+    sudo python3 dns.py
 
 ## dnsspoof.py
 
@@ -22,7 +22,7 @@ Crée un DNS Spoofer. Un DNS Spoofer permet d'intercepter les paquets DNS, et de
 
 **Avant de lancer le programme, choisir vers quelle IP on veut rediriger à la ligne 23 dans le champ "rdata". De plus, j'ai choisi de rediriger la cible si elle va sur le site du cnrs, mais on peut changer cela ligne 21.**
 
-`sudo python3 dnsspoofer.py`
+    sudo python3 dnsspoofer.py
 
 ## dnspoofsummary.py
 
@@ -30,4 +30,4 @@ Idem que le précédent mais print le summary du paquet.
 
 **Utilisation :**
 
-`sudo python3 dnsspoofersummary.py`
+    sudo python3 dnsspoofersummary.py

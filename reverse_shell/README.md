@@ -38,7 +38,7 @@ Ce programme n'est en soit que le parasite expliqué plus haut, il ne prend pas 
 
 **Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant**, pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme (vous pouvez exécuter les 2 programmes sur la même machine) :
 
-`sudo python3 target.py`
+    sudo python3 target.py
 
 La victime va se connecter à l'attaquant. Une fois la connexion effectuée, celui-ci pourra effectuer de nombreuses commandes. Tapez "help" pour avoir la liste des commandes.
 
