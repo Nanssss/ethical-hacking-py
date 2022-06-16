@@ -2,7 +2,7 @@
 
 **Ne marche que sur windows**
 
-Programme à exécuter sur la target. Run les commandes cmd pour voir les réseaux wifi enregistrés ainsi que leurs mdp, puis les envoie par mail.
+Programme à exécuter sur la target. Run les commandes cmd pour voir les réseaux wifi enregistrés ainsi que leurs mdp, puis les envoie par mail ou les écrit dans un fichier.
 
 **Utilisation :**
 
