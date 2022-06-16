@@ -2,3 +2,13 @@ iptables --flush
 iptables -I FORWARD -j NFQUEUE --queue-num 0
 iptables -I OUTPUT -j NFQUEUE --queue-num 0
 iptables -I INPUT -j NFQUEUE --queue-num 0
+
+
+
+sudo iptables --flush"
+sudo iptables -I FORWARD -j NFQUEUE --queue-num 0
+sudo iptables -I OUTPUT -j NFQUEUE --queue-num 0
+sudo iptables -I INPUT -j NFQUEUE --queue-num 0
+iptables -A FORWARD -o wlan0 -j ACCEPT
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i wlan0 -j ACCEPT
+sudo iptables -t nat -A PREROUTING -p udp --dport 53 -j NFQUEUE --queue-num 0

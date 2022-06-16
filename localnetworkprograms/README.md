@@ -49,8 +49,6 @@ Ce programme nous sert à sniffer les paquets passant sur le réseau, et affiche
 
 `sudo python3 macsniffer.py`
 
-Simplement exécuter le programme.
-
 ## ftpsniff.py
 
 **A utiliser en parallèle de l'arpspoofer, ou à tester localement**

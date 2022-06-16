@@ -1,5 +1,9 @@
 # Security Course (Nans Rey)
 
+**Attention, de nombreux programmes ne marchent que sous Linux**
+
+**De plus, pour certains tests, j'utilisais une machine virtuelle faisant tourner metasploitable, vous pouvez la trouver ici : https://sourceforge.net/projects/metasploitable/**
+
 Voici une description des programmes présents dans les sous-dossiers. A l'intérieur de chaque sous-dossier, vous avez un README expliquant le fonctionnement de chaque programme.
 
 ## scanning

@@ -20,7 +20,7 @@ Fait la même chose que sshlogin.py mais bruteforce à l'aide d'une liste de mdp
 
 `python3 sshbruteforce.py`
 
-Il va vous demander l'IP de la cible et l'user pour le SSH.
+Il va vous demander l'IP de la cible et l'user pour le SSH. Pour ce test, j'ai utilisé metasploitable.
 
 ## anonloginftp.py
 
@@ -30,7 +30,7 @@ Essaye de se connecter en ftp en anonyme à l'hôte spécifié.
 
 `python3 anonloginftp.py`
 
-Il va vous demander de rentrer l'IP de l'hôte auquel se connecter.
+Il va vous demander de rentrer l'IP de l'hôte auquel se connecter. Pour ce test, j'ai utilisé metasploitable.
 
 ## ftpbrute.py & passwordsftp.txt
 
@@ -40,4 +40,4 @@ Bruteforce la connexion en ftp à l'hôte spécifié grâce au fichier spécifi�
 
 `python3 ftpbrute.py`
 
-Ensuite, il va vous demander l'hôte à cibler et le path vers le fichier de mots de passe (au format user:mdp).
+Ensuite, il va vous demander l'hôte à cibler et le path vers le fichier de mots de passe (au format user:mdp). Pour ce test, j'ai utilisé metasploitable.

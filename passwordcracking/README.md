@@ -23,7 +23,7 @@ Il va ensuite demander une chaine de caractères à hasher. Vous pouvez par exem
 
 **sha1 : `18c28604dd31094a8d69dae60f1bcd347f1afc5a`**
 
-## md5brute.py
+## md5brute.py & dictionnary.txt
 
 L'opération de hashage est irréversible, pour retrouver un mot de passe, on va donc procéder à l'envers. On va en fait tester avec différents mots de passe qu'on va crypter, si le hash obtenu à la fin est le même, on aura alors retrouvé le mot de passe (l'empreinte étant unique).
 
@@ -35,7 +35,7 @@ Si on trouve une valeur de sha1 égale, alors on aura trouvé le mot de passe.
 
 `python3 md5brute.py`
 
-Il va ensuite vous demander le hash à cracker et le path du dictionnaire/fichier à utiliser. Vous pouvez voir que si vous utilisez le hash md5 de "superman" (en gras au-dessus) et le dictionnaire **passwordcracking/dictionnary.py**, il va bien trouver que "superman" était le mot de passe originel (vu qu'il est contenu dans le dictionnaire).
+Il va ensuite vous demander le hash à cracker et le path du dictionnaire/fichier à utiliser. Vous pouvez voir que si vous utilisez le hash md5 de "superman" (en gras au-dessus) et le dictionnaire **dictionnary.txt**, il va bien trouver que "superman" était le mot de passe originel (vu qu'il est contenu dans le dictionnaire).
 
 ## sha1brute.py
 
@@ -49,7 +49,7 @@ Il va ensuite vous demander le hash à cracker. Si vous utilisez le hash sha1 de
 
 On pourrait procéder de même pour les autres cryptages sha224, 256 etc.
 
-## cryptforce.py
+## cryptforce.py & passcrypt.txt & dictionnary.txt
 
 Ici, on bruteforce un cryptage de type salt.
 C'est un cryptage qui rajoute un préfixe/suffixe (à partir du salt) devant/après le mot de passe, puis le hashe. Le résultat est alors totalement différent du hashage du mot de passe originel. Il faut donc connaitre le salt pour pouvoir retrouver le mot de passe. C'est un bon outil pour se protéger des attaques par bruteforce, dictionnaire ou rainbow-tables.

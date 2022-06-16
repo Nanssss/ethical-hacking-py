@@ -9,7 +9,7 @@ champ_password = "password" #password
 button_login = "Login" #nom bouton
 type_button = "submit" #type bouton
 champ_failed = "Login failed" #message qd on rate le login
-page_url = "http://<ip_metasploitable>/dvwa/login.php" #page qu'on veut bruteforcer
+page_url = "http://172.16.20.128/dvwa/login.php" #page qu'on veut bruteforcer
 
 
 def bruteforce(username,url):

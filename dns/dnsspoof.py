@@ -31,11 +31,11 @@ def process_packet(packet):
 
 os.system("sudo iptables --flush")
 os.system("sudo iptables -I FORWARD -j NFQUEUE --queue-num 0")
-os.system(f"iptables -A FORWARD -o wlan0 -j ACCEPT")
-os.system(f"iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i wlan0 -j ACCEPT")
-os.system('sudo iptables -t nat -A PREROUTING -p udp --dport 53 -j NFQUEUE --queue-num 0')
 os.system("sudo iptables -I OUTPUT -j NFQUEUE --queue-num 0") #celui la et celui d'en dessous juste sur la machine locale
 os.system("sudo iptables -I INPUT -j NFQUEUE --queue-num 0")
+# os.system("iptables -A FORWARD -o wlan0 -j ACCEPT")
+# os.system("iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i wlan0 -j ACCEPT")
+# os.system('sudo iptables -t nat -A PREROUTING -p udp --dport 53 -j NFQUEUE --queue-num 0')
 
 queue = netfilterqueue.NetfilterQueue() #objet queue
 try:

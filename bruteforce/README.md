@@ -29,35 +29,35 @@ En effet, il est facile de trouver sur internet des dictionnaires des mots de pa
 
 Une attaque par bruteforce est donc facile à mettre en place, mais il est aussi facile de s'en protéger.
 
-## gmailbrute.py
+## gmailbrute.py & passwords.txt
 
 Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un certain nombre de tests, le serveur nous bloque.
 
-*Je me souviens que ce programme marchait à l'époque où j'ai suivi le cours, mais maintenant, après avoir testé avec ma propre addresse mail, il ne fonctionne pas et je n'arrive pas à voir pourquoi...*
+**Attention, gmail a maintenant augmenté la sécurité liée au protocole SMTP. Si on veut l'utiliser, il faut modifier les paramètres Google pour autoriser les applications moins sécurisées. Le bruteforce par SMTP n'est donc plus vraiment possible pour gmail, à part si la cible à autorisé le protocole SMTP (ce qui réduit grandement les cibles potentielles). Cependant, de nombreux autres services de mail n'utilisent pas cette sécurité supplémentaires.**
 
 **Utilisation :**
 
 `python3 gmailbrute.py`
 
-Il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple passwords.txt).
+Il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple **passwords.txt**).
 
 */!\ Si le programme est exécuté depuis vscode, le répertoire courant est security-course (et non bruteforce). Si on veut utiliser passwords.txt, il faudra alors spécifier le chemin "bruteforce/passwords.txt".*
 
-## websitebruteforcer.py
+## websitebruteforcer.py & passwords.txt
 
-Programme servant à bruteforce n'importe quelle page de login. Il faut juste adapter les champs en haut du programme pour matcher avec le site voulu. Après, en réalité, les sites nous bloquent après un certain nombre de tentatives.
+Programme servant à bruteforcer n'importe quelle page de login. Il faut juste adapter les champs en haut du programme pour matcher avec le site voulu. Après, souvent en réalité les sites nous bloquent après un certain nombre de tentatives.
 
 **Utilisation :**
+
+**Avant de lancer le programme, vous devez modifier les champs pour l'user, le mdp, le bouton, et l'IP. Pour tester ce programme, j'utilisais metasploitable, et notamment DVWA (Damn Vulnerable Web Application). Le nom d'utilisateur est "admin" et le mot de passe est "password" (présent dans le fichier)**
 
 `python3 websitebruteforcer.py`
 
 Il va demander l'utilisateur à bruteforcer, et le path vers le fichier contenant les mots de passe à chercher.
 
-Vous pouvez essayer avec **bruteforce/passwords.txt**.
+Vous pouvez essayer avec **passwords.txt**.
 
-*Pour tester ce programme, j'utilisais une machine virtuelle faisant tourner metasploitable, et notamment DVWA(Damn Vulnerable Web Application). Vous pouvez le trouver ici si vous souhaitez le tester : https://dvwa.co.uk/*
-
-## directories.py
+## directories.py & common.txt
 
 Bruteforce un site web pour trouver les directories du site auxquels on peut accéder. Ceux-ci peuvent contenir des données intéressantes.
 
@@ -67,9 +67,9 @@ Bruteforce un site web pour trouver les directories du site auxquels on peut acc
 
 Il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
 
-Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de directories.
+Vous pouvez essayer avec **https://google.com** et le fichier **common.txt**, il va trouver beaucoup de directories.
 
-## subdomains.PY
+## subdomains.PY & common.txt
 
 Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuvent contenir des données intéressantes.
 
@@ -79,7 +79,7 @@ Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuven
 
 Il va demander l'url à bruteforcer, et le path vers le fichier contenant les directories à tester.
 
-Vous pouvez essayer avec **https://google.com** et le fichier **bruteforce/common.txt**, il va trouver beaucoup de subdomains.
+Vous pouvez essayer avec **https://google.com** et le fichier **common.txt**, il va trouver beaucoup de subdomains.
 
 ## falseheader.py
 
