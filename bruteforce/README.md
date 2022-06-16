@@ -37,7 +37,7 @@ Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un cer
 
 **Utilisation :**
 
-'''
+'''code
 python3 gmailbrute.py
 '''
 
