@@ -2,14 +2,17 @@
 
 import socket
 import os
-import sys #pour check le nb d'arguments specifies dans la commande du programme
+import sys 
 from termcolor import cprint
 
-def checkVulns(banner, filename): #fonction qui teste si la banner est presente dans le ficher des banners vulnerables
-	f = open(filename, "r") #pour ouvrir un fichier dans python il faut creer une variable, ensuite on fait open(file, "mode"), il y a 3 modes differents, r pour read
-	for line in f.readlines(): #fonction qui permet de lire ligne par ligne
+portlist = [21,22,25,80,110,443,445,902] #liste de ports
+iplist = ["192.168.0.100", "192.168.0.102"]
+
+def checkVulns(banner, filename, ip): #fonction qui teste si la banner est presente dans le ficher des banners vulnerables
+	f = open(filename, "r")
+	for line in f.readlines():	
 		if line.strip("\n") in banner.decode():
-			cprint('[+] Server is vulnerable: ' + banner.decode(), 'green') #strip sert a retirer le caractere saut de ligne
+			cprint('[+] IP {} is vulnerable: {}'.format(ip, banner.decode()), 'green') 
 
 def retBanner(ip, port):
 	try:
@@ -22,25 +25,23 @@ def retBanner(ip, port):
 		return
 
 def main():
-	if len(sys.argv) == 2: #si ya 2 arguments
-		filename = sys.argv[1] #le filename est l'arg 2
-		if not os.path.isfile(filename): #si ce fichier n'existe pas ou si c'est pas un fichier
+	if len(sys.argv) == 2: 
+		filename = sys.argv[1] 
+		if not os.path.isfile(filename):
 			cprint('[-] File doesnt exist !', 'red')
 			exit(0)
-		if not os.access(filename, os.R_OK): #si on a pas acces a ce fichier
+		if not os.access(filename, os.R_OK): 
 			cprint('[-] Access denied !', 'red')
 			exit(0)
-	else: #s'il n'y a pas 2 args
-		cprint('[-] Usage: ' + str(sys.argv[0]) + "<vuln filename>", 'yellow') #on affiche comment utiliser le prgrm
+	else:
+		cprint('[-] Usage: ' + str(sys.argv[0]) + "<vuln filename>", 'yellow')
 		exit(0)
 
 	#si tout est ok
-	portlist = [21,22,25,80,110,443,445] #liste de ports
-	for x in range(59,61): #scanne les fin d'ip entre (ici, la)
-		ip = "129.187.229." + str(x) #les débuts d'ips
+	for ip in iplist: 
 		for port in portlist:
-			banner = retBanner(ip,port) #on fait comme le programme precedent
+			banner = retBanner(ip, port) 
 			if banner:
-				cprint('[+] ' + ip + "/" + str(port) + " : " + banner.decode(), 'yellow')
-				checkVulns(banner, filename) #fonction qui va tester si la banner est dans le fichier des banners vulnerables
+				cprint('[+] Banner found :' + ip + "/" + str(port) + " : " + banner.decode(), 'yellow')
+				checkVulns(banner, filename, ip) #fonction qui va tester si la banner est dans le fichier des banners vulnerables
 main()
