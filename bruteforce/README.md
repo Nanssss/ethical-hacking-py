@@ -37,7 +37,7 @@ Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un cer
 
 **Utilisation :**
 
-`python3 gmailbrute.py`
+'''python3 gmailbrute.py'''
 
 Il va demander de rentrer l'email à bruteforce et le path vers le fichier contenant les mots de passe à tester (par exemple **passwords.txt**).
 
