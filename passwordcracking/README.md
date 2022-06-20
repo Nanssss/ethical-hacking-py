@@ -5,7 +5,7 @@ Divers programmes de cracking de mots de passe cryptés en md5 et sha.
 Ces protocoles sont des algorithmes de hashage. Ils sont très utilisés dans d'innombrables applications de nos jours.
 
 - Ils sont utilisés pour générer des clés (ou empreintes) **uniques** protégeant des données. Il peuvent par exemple permettre de crypter un mot de passe ou de controler l'intégrité d'un fichier.
-- Chaque protocole a une taille d'empreinte différente : 128 bits pour md5, 160 bits pour sha1, 224 bits pour sha224, 256 bits pour sha256, 512 bits pour sha512. Les algorithme ont ainsi évolué en complexité et en longueur d'empreinte au fil du temps. Aujourd'hui par exemple, le md5 est totalement obsolète à cause de l'augmentation de la puissance de calcul des ordinateurs.
+- Chaque protocole a une taille d'empreinte différente : 128 bits pour md5, 160 bits pour sha1, 224 bits pour sha224, 256 bits pour sha256, 512 bits pour sha512. Les algorithmes ont ainsi évolué en complexité et en longueur d'empreinte au fil du temps. Aujourd'hui par exemple, le md5 est totalement obsolète à cause de l'augmentation de la puissance de calcul des ordinateurs.
 - L'opération est irréversible, il est donc impossible de retrouver le mot de passe à partir du hash.
 
 ## hasher.py
@@ -39,7 +39,7 @@ Il va ensuite vous demander le hash à cracker et le path du dictionnaire/fichie
 
 ## sha1brute.py
 
-Même fonctionnement que le programme précedent, seulement, cette fois-ci, le dictionnaire est donné par url.
+Même fonctionnement que le programme précedent, mais avec le protocole sha1 et cette fois-ci, le dictionnaire est donné par url.
 
 **Utilisation :**
 
@@ -60,4 +60,4 @@ Ici, le programme prend le mot de passe hashé qu'on recherche, puis le compare 
 
     python3 cryptforce.py
 
-Il suffit d'exécuter le programme. Le programme va aller chercher des combinaisons user:mdp(hashé) à cracker dans le fichier passcrypt.txt, qu'il va comparer avec les hash des mdp contenus dans dictionnary.txt en ajoutant le salt (pour obtenir le hash de superman avec le salt, j'ai simplement exécuté `crypt.crypt("superman", "su")` dans python)
+Il suffit d'exécuter le programme. Le programme va aller chercher des combinaisons user:mdp(hashé) à cracker dans le fichier passcrypt.txt, qu'il va comparer avec les hash des mdp contenus dans dictionnary.txt en ajoutant le salt (pour obtenir le hash de superman avec le salt, j'ai simplement exécuté `crypt.crypt("superman", "su")` dans python).

@@ -25,7 +25,7 @@ En effet, il est facile de trouver sur internet des dictionnaires des mots de pa
 *Mais alors, quelles sont les mesures à prendre pour se protéger des attaques par bruteforce ?*
 1. Tout d'abord, comme nous l'avons vu, choisir un mot de passe long et complexe augmente grandement le nombre de combinaisons possibles.
 2. Ensuite, on peut facilement sécuriser le mécanisme d'authentification en le bloquant après X tentatives de connexion infructueuses.
-3. L'authentification multifactorielle est aussi utilisée. C'est par exemple lorsqu'on vous demande en plus d'entrer un mot de passe reçu par SMS.
+3. L'authentification multifactorielle est aussi utilisée. C'est par exemple lorsqu'on vous demande en plus d'entrer un code reçu par SMS.
 
 Une attaque par bruteforce est donc facile à mettre en place, mais il est aussi facile de s'en protéger.
 
@@ -33,7 +33,7 @@ Une attaque par bruteforce est donc facile à mettre en place, mais il est aussi
 
 Bruteforcer pour gmail en utilisant le serveur smtp. Cependant, au bout d'un certain nombre de tests, le serveur nous bloque.
 
-**Attention, gmail a maintenant augmenté la sécurité liée au protocole SMTP. Si on veut l'utiliser, il faut modifier les paramètres Google pour autoriser les applications moins sécurisées. Le bruteforce par SMTP n'est donc plus vraiment possible pour gmail, à part si la cible à autorisé le protocole SMTP (ce qui réduit grandement les cibles potentielles). Cependant, de nombreux autres services de mail n'utilisent pas cette sécurité supplémentaires.**
+**Attention, gmail a maintenant augmenté la sécurité liée au protocole SMTP. Si on veut l'utiliser, il faut modifier les paramètres Google pour autoriser les applications moins sécurisées. Le bruteforce par SMTP n'est donc plus vraiment possible pour gmail, à part si la cible à autorisé le protocole SMTP (ce qui réduit grandement les cibles potentielles). Cependant, de nombreux autres services de mail n'utilisent pas cette sécurité supplémentaire.**
 
 **Utilisation :**
 
@@ -49,7 +49,7 @@ Programme servant à bruteforcer n'importe quelle page de login. Il faut juste a
 
 **Utilisation :**
 
-**Avant de lancer le programme, vous devez modifier les champs pour l'user, le mdp, le bouton, et l'IP. Pour tester ce programme, j'utilisais metasploitable, et notamment DVWA (Damn Vulnerable Web Application). Le nom d'utilisateur est "admin" et le mot de passe est "password" (présent dans le fichier)**
+**Avant de lancer le programme, vous devez modifier les champs pour l'user, le mdp, le bouton, et l'IP (trouvés dans le code source de la page web). Pour tester ce programme, j'utilisais metasploitable, et notamment DVWA (Damn Vulnerable Web Application). Le nom d'utilisateur est "admin" et le mot de passe est "password" (présent dans le fichier passwords.txt)**
 
     python3 websitebruteforcer.py
 
@@ -59,7 +59,7 @@ Vous pouvez essayer avec **passwords.txt**.
 
 ## directories.py & common.txt
 
-Bruteforce un site web pour trouver les directories du site auxquels on peut accéder. Ceux-ci peuvent contenir des données intéressantes.
+Bruteforce un site web pour trouver les directories du site auxquels on peut accéder. Ceux-ci peuvent contenir des données intéressantes non accessibles en naviguant normalement sur le site web.
 
 **Utilisation :**
 
@@ -71,7 +71,7 @@ Vous pouvez essayer avec **https://google.com** et le fichier **common.txt**, il
 
 ## subdomains.PY & common.txt
 
-Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuvent contenir des données intéressantes.
+Idem que le programme précedent mais va chercher les subdomains. Ceux-ci peuvent contenir des données non accessibles en naviguant normalement sur le site web.
 
 **Utilisation :**
 

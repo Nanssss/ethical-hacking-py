@@ -17,7 +17,7 @@ Il va vous demander l'interface sur laquelle vous voulez changer votre mac, j'im
 
 Ce programme est un arpspoofer. Il sert à se faire passer pour le routeur auprès de la victime et inversement. Il est donc un outil indispensable pour mener des attaques MITM (Man In The Middle). Une fois l'arpspoofer activé, tous les paquets échangés entre la victime et le routeur passent par la machine de l'attaquant. L'arp spoofing est donc la base pour le sniffing de paquets ou le DNS Spoofing.
 
-Il faut activer l'ipforwarding si on veut que la victime ait internet, pour ce faire, il y a le programme ipforward.sh.
+Il faut activer l'ipforwarding si on veut que la victime ait internet, pour ce faire, j'ai écrit le petit script ipforward.sh.
 
 `sudo ./ipforward.sh 1` pour activer l'ip forwarding et `sudo ./ipforward.sh 0` pour le désactiver.
 
@@ -76,7 +76,7 @@ Il va ensuite vous demander l'interface sur laquelle sniffer les paquets HTTP.
 
 ## sniffpackets.py
 
-Programme qui analyse tous les paquets passant par la machine, et affiche les infos des header Ethernet, IP, UDP, TCP.
+Programme qui analyse tous les paquets passant par la machine, et affiche les infos des headers Ethernet, IP, UDP, TCP.
 
 **Utilisation :**
 

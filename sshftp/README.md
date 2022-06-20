@@ -1,6 +1,6 @@
 # SSH & FTP attacks
 
-Les protocoles SSH et FTP sont des protocoles très utilisés. De plus, ils sont très intéressants pour un attaquant puisque le SSH permet d'avoir le contrôle de la machine cible, et le FTP donne accès à des informations internes.
+Les protocoles SSH et FTP sont des protocoles très utilisés, et qui constituent des failles potentielles. De plus, ils sont très intéressants pour un attaquant puisque le SSH permet d'avoir le contrôle de la machine cible, et le FTP donne accès à des informations internes.
 
 ## sshlogin.py
 

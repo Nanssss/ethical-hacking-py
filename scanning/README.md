@@ -24,7 +24,6 @@ Puis il vous demande l'IP et le port à scanner.
 
 Même chose mais scanne tous les ports.
 
-
 **Utilisation :**
 
     python3 portscanrange.py

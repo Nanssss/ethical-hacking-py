@@ -12,7 +12,7 @@ Une fois la connexion établie, il peut exécuter tout un tas de commandes, qu'o
 
     download <path> --> Download a file from target PC
     upload <path>   --> Upload a file to target PC
-    get <url>       --> Download a file to target PC from a url
+    get <url>       --> Download a file to target PC from an url
     start path      --> Start a program on target pc
     screenshot      --> Take a screenshot of target monitor
     check           --> Check for the admin privileges
@@ -20,13 +20,19 @@ Une fois la connexion établie, il peut exécuter tout un tas de commandes, qu'o
     keylog_dump     --> Dump the keylogger collected data
     q               --> exit the reverse shell
 
+**Pour toutes les commandes ne comprenant pas les mots clés ci-dessus, le programme va simplement essayer de les exécuter avec l'invite de commande de la cible. Vous pouvez par exemple tester le bon fonctionnement avec "echo coucou".**
+
+**La commande check qui regarde les privilèges avec lesquels le programme a été exécuté est étudiée pour fonctionner sur windows, puisqu'elle checke si on a accés à un dossier windows seulement accessible en admin.**
+
+Pour les screenshots et le keylogger, les fichiers seront créés dans le dossier courant.
+
 **Utilisation :**
 
 **Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant** (donc de votre machine), pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme :
 
     sudo python3 server.py
 
-Le serveur est donc lancé et attend la connexion d'une victime.
+Le serveur est donc lancé et attend la connexion d'une victime (donc l'éxécution du programme target.py).
 
 ## target.py
 
@@ -34,13 +40,15 @@ Programme à lancer sur la machine victime. Il va établir un connexion avec l'a
 
 Ce programme n'est en soit que le parasite expliqué plus haut, il ne prend pas l'apparrence d'un autre logiciel sain. Cependant, j'ai pu faire des tests, et j'ai remarqué que je pouvais injecter ce code dans n'importe quel exécutable. Toute machine exécutant celui-ci se retrouvant alors infectée.
 
+**Ce programme importe le programme keylogger.py, il doit donc aussi être présent dans le dossier pour fonctionner**
+
 **Utilisation :**
 
-**Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) localIP par l'IP de l'attaquant**, pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme (vous pouvez exécuter les 2 programmes sur la même machine) :
+**Avant de lancer le programme, l'ouvrir et remplacer (tout en haut) iptoconnect par l'IP de l'attaquant**, pour le port vous pouvez choisir ce que vous voulez. Ensuite, exécuter le programme (vous pouvez exécuter les 2 programmes sur la même machine) :
 
     sudo python3 target.py
 
-La victime va se connecter à l'attaquant. Une fois la connexion effectuée, celui-ci pourra effectuer de nombreuses commandes. Tapez "help" pour avoir la liste des commandes.
+La victime va se connecter à l'attaquant. Une fois la connexion effectuée, celui-ci pourra effectuer de nombreuses commandes depuis le programme server.py. Tapez "help" pour avoir la liste des commandes.
 
 ## keylogger.py
 
