@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import scapy.all as scapy
 from scapy.layers import http

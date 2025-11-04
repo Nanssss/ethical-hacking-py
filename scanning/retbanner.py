@@ -1,4 +1,5 @@
 #!/usr/bin/python3.8
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import socket
 from termcolor import cprint

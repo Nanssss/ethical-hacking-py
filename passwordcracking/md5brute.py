@@ -1,4 +1,5 @@
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 from termcolor import colored
 import hashlib

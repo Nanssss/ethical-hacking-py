@@ -1,5 +1,9 @@
 # Reverse Shell
 
+*Note that your antivirus may flag `target.py` as a Trojan, because it is indeed one! It is more precisely a reverse-shell your want to play with, so you're safe discarding your antivirus' warning.*
+
+----
+
 Ce projet est un cheval de Troie (Trojan) constitué de 3 programmes : server.py, target.py et keylogger.py.
 
 Le Trojan est un type de logiciel malveillant particulièrement dangereux. Il consiste à installer un "parasite" sur la machine de la victime, en prenant l'apparence d'un programme sain et légitime. Ce parasite permettra d'exécuter toutes sortes d'actions malveillantes à l'insu de l'utilisateur. Dans ce cheval de Troie, je peux entre autres récupérer les touches de clavier pressées, prendre des screenshots, télécharger et uploader des fichiers sur la machine cible, et même avoir accès à l'invite de commande (avec lequel on peut pratiquement tout faire).

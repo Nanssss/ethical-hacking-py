@@ -1,5 +1,6 @@
 #!usr/bin/python
 # -*- coding: utf-8 -*-
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import socket
 import json

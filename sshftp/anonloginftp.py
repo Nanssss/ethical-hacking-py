@@ -1,4 +1,5 @@
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import ftplib
 from termcolor import cprint

@@ -1,4 +1,5 @@
 #!usr/bin/python3.8
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import pexpect #va nous servir a automatiser le processus de login ssh
 from termcolor import cprint

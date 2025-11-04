@@ -1,5 +1,6 @@
 
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import hashlib #perform the hashing
 

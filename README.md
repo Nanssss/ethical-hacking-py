@@ -1,8 +1,10 @@
 # Ethical Hacking Programs
 
-*Use responsibly — these examples are for learning and authorized testing only.*
+⚠️ ***Ethical use only:** See `DISCLAIMER.md`. This code is for education and authorized testing only. The author is not responsible for misuse.
 
 *Please keep in mind that I wrote this code back when I was still a student — it’s far from perfect!*
+
+Also note that your antivirus may flag `target.py` as a Trojan, because it is indeed one! It is more precisely a reverse-shell your want to play with, so you're safe discarding your antivirus' warning.
 
 ----
 

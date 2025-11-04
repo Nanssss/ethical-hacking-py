@@ -1,4 +1,5 @@
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 from urllib.request import urlopen #la seule fonciton dont on a besoin dans cette librairie
 import hashlib

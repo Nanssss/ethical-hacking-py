@@ -1,4 +1,5 @@
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import netfilterqueue #permet de faire un nombre de queue depuis IP tables pour forward the packets and change the packets while the user is sending them
 import scapy.all as scapy

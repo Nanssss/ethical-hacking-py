@@ -1,4 +1,5 @@
 #!usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 import subprocess #permet d'executer des commandes systemes et checker leur output
 from termcolor import colored

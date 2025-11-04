@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 #pour forward les packets, il suffit de modifier la valeur dans le fichier /proc/sys/net/ipv4/ip_forward -> 0:off ; 1:on, voir le programme ifforwarding a executer en sudo su
 

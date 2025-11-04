@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Disclaimer: Educational & authorized testing only, see DISCLAIMER.md
 
 #ce programme aide a nous rendre plus anonyme sur des sites http
 
