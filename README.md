@@ -1,10 +1,10 @@
-# Security Course (Nans Rey)
+# Ethical Hacking Programs
 
-**Attention, de nombreux programmes ne marchent que sous Linux**
+**Attention, de nombreux programmes ne marchent que sous Linux.**
 
 **Il y a aussi quelques dépendances à installer. Pour ce faire, il faut juste exécuter la commande `pip3 install -r requirements.txt`, j'espère ne pas en avoir oublié.**
 
-**De plus, pour certains tests, j'utilisais une machine virtuelle faisant tourner metasploitable (une machine volontairement vulnérable), vous pouvez la trouver ici : https://sourceforge.net/projects/metasploitable/**
+**De plus, pour certains tests, j'utilisais une machine virtuelle faisant tourner metasploitable (une machine volontairement vulnérable), vous pouvez la trouver ici : https://sourceforge.net/projects/metasploitable/.**
 
 Voici une description des programmes présents dans les sous-dossiers. A l'intérieur de chaque sous-dossier, vous avez un README expliquant le fonctionnement de chaque programme.
 
