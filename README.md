@@ -1,5 +1,9 @@
 # Ethical Hacking Programs
 
+*Please keep in mind that I wrote this code back when I was still a student — it’s far from perfect!*
+
+----
+
 **Attention, de nombreux programmes ne marchent que sous Linux.**
 
 **Il y a aussi quelques dépendances à installer. Pour ce faire, il faut juste exécuter la commande `pip3 install -r requirements.txt`, j'espère ne pas en avoir oublié.**
