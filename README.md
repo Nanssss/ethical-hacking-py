@@ -1,5 +1,7 @@
 # Ethical Hacking Programs
 
+*Use responsibly — these examples are for learning and authorized testing only.*
+
 *Please keep in mind that I wrote this code back when I was still a student — it’s far from perfect!*
 
 ----
